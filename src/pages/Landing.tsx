@@ -9,7 +9,12 @@ import {
   Phone,
   MapPin,
   Linkedin,
-  ArrowRight
+  ArrowRight,
+  BarChart3,
+  Megaphone,
+  Building2,
+  ClipboardCheck,
+  Leaf
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -47,7 +52,7 @@ export default function Landing() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Minimal Navbar */}
+      {/* Sticky Navbar */}
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -69,16 +74,21 @@ export default function Landing() {
             </motion.div>
             
             <div className="hidden md:flex space-x-12">
-              {["HOME", "MARKETPLACE", "INTERNALS"].map((item, index) => (
+              {[
+                { label: "HOME", id: "home" },
+                { label: "SERVICES", id: "services" },
+                { label: "ABOUT", id: "about" },
+                { label: "CONTACT", id: "contact" }
+              ].map((item, index) => (
                 <motion.button
-                  key={item}
+                  key={item.label}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  onClick={() => scrollToSection(item.toLowerCase())}
+                  onClick={() => scrollToSection(item.id)}
                   className="text-xs font-medium tracking-widest text-[#1A1A1A] hover:text-[#CBA135] transition-colors"
                 >
-                  {item}
+                  {item.label}
                 </motion.button>
               ))}
             </div>
@@ -86,8 +96,8 @@ export default function Landing() {
         </div>
       </motion.nav>
 
-      {/* Hero / About Us Section - Split Screen */}
-      <section id="home" className="relative min-h-screen flex items-center pt-24">
+      {/* Hero Section */}
+      <section id="home" className="relative min-h-screen flex items-center pt-24 bg-gradient-to-b from-white to-[#F7F7F7]">
         {/* Golden geometric pattern - top right */}
         <div className="absolute top-24 right-0 w-64 h-64 opacity-20 z-0">
           <svg viewBox="0 0 200 200" className="w-full h-full text-[#CBA135]">
@@ -108,26 +118,21 @@ export default function Landing() {
               className="space-y-8 relative z-10"
             >
               <h1
-                className="text-6xl lg:text-7xl font-serif text-[#1A1A1A] leading-tight"
+                className="text-5xl lg:text-6xl font-serif text-[#1A1A1A] leading-tight"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
-                About Us
+                Empowering Businesses to Succeed with Insight and Integrity
               </h1>
               
-              <div className="space-y-4 text-[#1A1A1A] leading-relaxed max-w-xl">
-                <p className="text-sm">
-                  Derrysell DMCC is a trusted business consultancy and service provider under the Dubai Multi Commodities Centre (DMCC). We specialize in delivering customized commercial, strategic, and research-driven solutions that help clients navigate complex markets with confidence.
-                </p>
-                <p className="text-sm">
-                  Our expertise combines global insight, local market understanding, and a commitment to integrity and excellence.
-                </p>
-              </div>
+              <p className="text-base text-gray-700 leading-relaxed max-w-xl">
+                Trusted business consultancy registered under DMCC — delivering data-driven solutions for growth and innovation.
+              </p>
 
               <Button
-                onClick={() => scrollToSection("marketplace")}
+                onClick={() => scrollToSection("services")}
                 className="bg-[#CBA135] hover:bg-[#B8912F] text-white px-8 py-6 text-sm tracking-wide cursor-pointer"
               >
-                READ MORE
+                EXPLORE OUR SERVICES
               </Button>
             </motion.div>
 
@@ -141,8 +146,8 @@ export default function Landing() {
               <div className="relative">
                 <img
                   src="https://harmless-tapir-303.convex.cloud/api/storage/732cc831-9363-4103-91f2-ae4573e559f3"
-                  alt="Professional"
-                  className="w-full h-auto"
+                  alt="Professional Executive"
+                  className="w-full h-auto rounded-sm"
                 />
               </div>
             </motion.div>
@@ -160,124 +165,8 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* Mission Statement Section */}
-      <section id="marketplace" className="py-32 bg-[#F7F7F7] relative">
-        <div className="max-w-7xl mx-auto px-8 lg:px-16">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="max-w-4xl"
-          >
-            <h2
-              className="text-5xl font-serif text-[#1A1A1A] mb-12"
-              style={{ fontFamily: "'Playfair Display', serif" }}
-            >
-              Mission Statement
-            </h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              <div>
-                <h3 className="text-2xl font-serif text-[#1A1A1A] mb-4">
-                  Notre Mission
-                </h3>
-                <p className="text-sm text-gray-700 leading-relaxed">
-                  To empower businesses with actionable intelligence, strategic clarity, and measurable growth. We deliver customized solutions that combine global insight with local market understanding.
-                </p>
-              </div>
-              
-              <div>
-                <h3 className="text-2xl font-serif text-[#1A1A1A] mb-4">
-                  Exclycorporée
-                </h3>
-                <p className="text-sm text-gray-700 leading-relaxed">
-                  To be the preferred consultancy partner for innovation-led, sustainable business success across industries. We strive for excellence in every engagement.
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Services Section - Inverted Split */}
-      <section id="internals" className="relative min-h-screen flex items-center py-24 bg-white">
-        {/* Golden geometric pattern - top right */}
-        <div className="absolute top-0 right-0 w-64 h-64 opacity-20 z-0">
-          <svg viewBox="0 0 200 200" className="w-full h-full text-[#CBA135]">
-            <pattern id="pattern-services" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-              <path d="M0 10 L10 0 L20 10 L10 20 Z" fill="none" stroke="currentColor" strokeWidth="0.3"/>
-            </pattern>
-            <rect width="200" height="200" fill="url(#pattern-services)" />
-          </svg>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-8 lg:px-16 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Left Image */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="relative order-2 lg:order-1"
-            >
-              <div className="relative">
-                <img
-                  src="https://harmless-tapir-303.convex.cloud/api/storage/732cc831-9363-4103-91f2-ae4573e559f3"
-                  alt="Professional Services"
-                  className="w-full h-auto"
-                />
-              </div>
-            </motion.div>
-
-            {/* Right Content */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="space-y-8 relative z-10 order-1 lg:order-2"
-            >
-              <h2
-                className="text-6xl lg:text-7xl font-serif text-[#1A1A1A] leading-tight"
-                style={{ fontFamily: "'Playfair Display', serif" }}
-              >
-                About Us
-              </h2>
-              
-              <div className="space-y-4 text-[#1A1A1A] leading-relaxed max-w-xl">
-                <p className="text-sm">
-                  Derrysell DMCC delivers comprehensive consultancy solutions designed to help your business grow, innovate, and thrive. Our expertise spans commercial information services, marketing management, strategic planning, and specialized research.
-                </p>
-                <p className="text-sm">
-                  We combine data-driven insights with practical implementation strategies to ensure measurable results for our clients across diverse industries.
-                </p>
-              </div>
-
-              <Button
-                onClick={() => scrollToSection("contact")}
-                className="bg-[#CBA135] hover:bg-[#B8912F] text-white px-8 py-6 text-sm tracking-wide cursor-pointer"
-              >
-                READ MORE
-              </Button>
-            </motion.div>
-          </div>
-        </div>
-
-        {/* Golden geometric pattern - bottom left */}
-        <div className="absolute bottom-0 left-0 w-48 h-48 opacity-20 z-0">
-          <svg viewBox="0 0 200 200" className="w-full h-full text-[#CBA135]">
-            <pattern id="pattern-services-bottom" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-              <path d="M0 10 L10 0 L20 10 L10 20 Z" fill="none" stroke="currentColor" strokeWidth="0.3"/>
-            </pattern>
-            <rect width="200" height="200" fill="url(#pattern-services-bottom)" />
-          </svg>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="py-32 bg-[#F7F7F7] relative">
+      {/* Services Section */}
+      <section id="services" className="py-32 bg-white relative">
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -290,37 +179,158 @@ export default function Landing() {
               className="text-5xl font-serif text-[#1A1A1A] mb-4"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
-              Team Toall
+              Our Expertise
             </h2>
+            <p className="text-base text-gray-600 max-w-3xl mx-auto">
+              Comprehensive consultancy solutions designed to help your business grow, innovate, and thrive.
+            </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { name: "Derrysell Derrysell", role: "Managing Director" },
-              { name: "Derrysell Derrysell", role: "Senior Partner" },
-              { name: "Derrysell Derrysell", role: "Consultant Lead" },
-              { name: "Derrysell Derrysell", role: "Research Director" }
-            ].map((member, index) => (
+              {
+                icon: <BarChart3 className="w-8 h-8" />,
+                title: "Commercial Information Services",
+                description: "Market intelligence, competitor benchmarking, and feasibility insights."
+              },
+              {
+                icon: <Megaphone className="w-8 h-8" />,
+                title: "Marketing Management",
+                description: "Strategic campaigns for brand positioning and customer engagement."
+              },
+              {
+                icon: <Building2 className="w-8 h-8" />,
+                title: "Management Consultancies",
+                description: "Operational optimization and strategic business planning."
+              },
+              {
+                icon: <ClipboardCheck className="w-8 h-8" />,
+                title: "Feasibility Studies Consultancies",
+                description: "Financial and market viability assessments for new ventures."
+              },
+              {
+                icon: <Leaf className="w-8 h-8" />,
+                title: "Agricultural Research and Consultancies",
+                description: "Innovative agri-solutions and sustainability-focused research."
+              }
+            ].map((service, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="text-center"
+                className="group"
               >
-                <div className="bg-gray-200 aspect-square mb-4 rounded-sm overflow-hidden">
-                  <img
-                    src="https://harmless-tapir-303.convex.cloud/api/storage/732cc831-9363-4103-91f2-ae4573e559f3"
-                    alt={member.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h3 className="text-sm font-medium text-[#1A1A1A]">{member.name}</h3>
-                <p className="text-xs text-gray-600">{member.role}</p>
+                <Card className="h-full border border-gray-200 hover:border-[#CBA135] transition-all duration-300 cursor-pointer">
+                  <CardContent className="p-8">
+                    <div className="text-[#CBA135] mb-4 group-hover:scale-110 transition-transform duration-300">
+                      {service.icon}
+                    </div>
+                    <h3 className="text-xl font-serif text-[#1A1A1A] mb-3" style={{ fontFamily: "'Playfair Display', serif" }}>
+                      {service.title}
+                    </h3>
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                      {service.description}
+                    </p>
+                  </CardContent>
+                </Card>
               </motion.div>
             ))}
           </div>
+        </div>
+
+        {/* Background pattern */}
+        <div className="absolute top-0 right-0 w-48 h-48 opacity-10 z-0">
+          <svg viewBox="0 0 200 200" className="w-full h-full text-[#CBA135]">
+            <pattern id="pattern-services" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+              <path d="M0 10 L10 0 L20 10 L10 20 Z" fill="none" stroke="currentColor" strokeWidth="0.3"/>
+            </pattern>
+            <rect width="200" height="200" fill="url(#pattern-services)" />
+          </svg>
+        </div>
+      </section>
+
+      {/* About Us Section */}
+      <section id="about" className="py-32 bg-[#F7F7F7] relative">
+        <div className="max-w-7xl mx-auto px-8 lg:px-16">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-16"
+          >
+            <h2
+              className="text-5xl font-serif text-[#1A1A1A] mb-12"
+              style={{ fontFamily: "'Playfair Display', serif" }}
+            >
+              About Derrysell DMCC
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+            {/* Left Text */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="space-y-6"
+            >
+              <p className="text-base text-gray-700 leading-relaxed">
+                Derrysell DMCC is a trusted business consultancy and service provider under the Dubai Multi Commodities Centre (DMCC).
+              </p>
+              <p className="text-base text-gray-700 leading-relaxed">
+                We specialize in delivering customized commercial, strategic, and research-driven solutions that help clients navigate complex markets with confidence.
+              </p>
+              <p className="text-base text-gray-700 leading-relaxed">
+                Our expertise combines global insight, local market understanding, and a commitment to integrity and excellence.
+              </p>
+            </motion.div>
+
+            {/* Right Image */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative"
+            >
+              <img
+                src="https://harmless-tapir-303.convex.cloud/api/storage/732cc831-9363-4103-91f2-ae4573e559f3"
+                alt="Professional Office"
+                className="w-full h-auto rounded-sm"
+              />
+            </motion.div>
+          </div>
+
+          {/* Mission Statement */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-16"
+          >
+            <div className="bg-white p-8 rounded-sm">
+              <h3 className="text-2xl font-serif text-[#1A1A1A] mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
+                Mission Statement
+              </h3>
+              <p className="text-sm text-gray-700 leading-relaxed">
+                To empower businesses with actionable intelligence, strategic clarity, and measurable growth.
+              </p>
+            </div>
+            
+            <div className="bg-white p-8 rounded-sm">
+              <h3 className="text-2xl font-serif text-[#1A1A1A] mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
+                Our Vision
+              </h3>
+              <p className="text-sm text-gray-700 leading-relaxed">
+                To be the preferred consultancy partner for innovation-led, sustainable business success across industries.
+              </p>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -340,7 +350,7 @@ export default function Landing() {
             >
               Get in Touch
             </h2>
-            <p className="text-sm text-gray-600">
+            <p className="text-base text-gray-600">
               Let's discuss how we can help your business thrive
             </p>
           </motion.div>
@@ -445,13 +455,13 @@ export default function Landing() {
                     href="https://linkedin.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 bg-[#CBA135] hover:bg-[#B8912F] flex items-center justify-center transition-colors cursor-pointer"
+                    className="w-10 h-10 bg-[#CBA135] hover:bg-[#B8912F] flex items-center justify-center transition-colors cursor-pointer rounded-sm"
                   >
                     <Linkedin className="w-5 h-5 text-white" />
                   </a>
                   <a
                     href="mailto:info@derrysell.com"
-                    className="w-10 h-10 bg-[#CBA135] hover:bg-[#B8912F] flex items-center justify-center transition-colors cursor-pointer"
+                    className="w-10 h-10 bg-[#CBA135] hover:bg-[#B8912F] flex items-center justify-center transition-colors cursor-pointer rounded-sm"
                   >
                     <Mail className="w-5 h-5 text-white" />
                   </a>
