@@ -122,6 +122,29 @@ export default function Landing() {
           </svg>
         </div>
 
+        {/* Golden geometric pattern - top left */}
+        <div className="absolute top-32 left-0 w-80 h-80 opacity-15 z-0">
+          <svg viewBox="0 0 200 200" className="w-full h-full text-[#CBA135]">
+            <pattern id="pattern-hero-left" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
+              <circle cx="15" cy="15" r="12" fill="none" stroke="currentColor" strokeWidth="0.5"/>
+              <circle cx="15" cy="15" r="8" fill="none" stroke="currentColor" strokeWidth="0.5"/>
+              <circle cx="15" cy="15" r="4" fill="none" stroke="currentColor" strokeWidth="0.5"/>
+            </pattern>
+            <rect width="200" height="200" fill="url(#pattern-hero-left)" />
+          </svg>
+        </div>
+
+        {/* Golden geometric pattern - bottom right */}
+        <div className="absolute bottom-32 right-0 w-80 h-80 opacity-15 z-0">
+          <svg viewBox="0 0 200 200" className="w-full h-full text-[#CBA135]">
+            <pattern id="pattern-hero-right" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
+              <path d="M0 15 L15 0 L30 15 L15 30 Z" fill="none" stroke="currentColor" strokeWidth="0.5"/>
+              <path d="M7.5 15 L15 7.5 L22.5 15 L15 22.5 Z" fill="none" stroke="currentColor" strokeWidth="0.5"/>
+            </pattern>
+            <rect width="200" height="200" fill="url(#pattern-hero-right)" />
+          </svg>
+        </div>
+
         <div className="max-w-7xl mx-auto px-8 lg:px-16 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             {/* Left Content */}
