@@ -97,7 +97,7 @@ export default function Landing() {
       </motion.nav>
 
       {/* Hero Section */}
-      <section id="home" className="relative min-h-screen flex items-center pt-24 bg-gradient-to-b from-white to-[#F7F7F7]">
+      <section id="home" className="relative min-h-screen flex items-center pt-24 bg-[#F5F5F5]">
         {/* Golden geometric pattern - top right */}
         <div className="absolute top-24 right-0 w-64 h-64 opacity-20 z-0">
           <svg viewBox="0 0 200 200" className="w-full h-full text-[#CBA135]">
@@ -166,7 +166,7 @@ export default function Landing() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-32 bg-white relative">
+      <section id="services" className="py-32 bg-[#F5F5F5] relative">
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -252,7 +252,7 @@ export default function Landing() {
       </section>
 
       {/* About Us Section */}
-      <section id="about" className="py-32 bg-[#F7F7F7] relative">
+      <section id="about" className="py-32 bg-white relative">
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -335,7 +335,7 @@ export default function Landing() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-32 bg-white relative">
+      <section id="contact" className="py-32 bg-[#F5F5F5] relative">
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -473,7 +473,7 @@ export default function Landing() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#F7F7F7] py-8 border-t border-gray-200">
+      <footer className="bg-white py-8 border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
           <div className="text-center text-xs text-gray-600 tracking-wide">
             <p>&copy; {new Date().getFullYear()} DERRYSELL DMCC. ALL RIGHTS RESERVED.</p>

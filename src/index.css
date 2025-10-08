@@ -46,15 +46,15 @@
 /* DERRYSELL DMCC THEME - Elegant Dubai-inspired with Gold Accents */
 :root {
   --radius: 0.5rem;
-  --background: oklch(1 0 0); /* Pure white */
+  --background: oklch(0.96 0 0); /* #F5F5F5 - Light gray background */
   --foreground: oklch(0.2 0 0); /* #1A1A1A - Deep black text */
-  --card: oklch(1 0 0);
+  --card: oklch(1 0 0); /* Pure white cards */
   --card-foreground: oklch(0.2 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.2 0 0);
   --primary: oklch(0.65 0.12 75); /* #CBA135 - Dubai gold */
   --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.97 0 0); /* #F7F7F7 - Light gray */
+  --secondary: oklch(0.96 0 0); /* #F5F5F5 - Light gray */
   --secondary-foreground: oklch(0.2 0 0);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.5 0 0);
