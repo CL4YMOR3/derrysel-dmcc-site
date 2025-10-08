@@ -260,7 +260,7 @@ export default function Landing() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             {[
               {
                 icon: <BarChart3 className="w-8 h-8" />,
@@ -296,19 +296,15 @@ export default function Landing() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="group"
               >
-                <Card className="h-full border border-gray-200 hover:border-[#CBA135] transition-all duration-300 cursor-pointer">
-                  <CardContent className="p-8">
-                    <div className="text-[#CBA135] mb-4 group-hover:scale-110 transition-transform duration-300">
-                      {service.icon}
-                    </div>
-                    <h3 className="text-xl font-serif text-[#1A1A1A] mb-3" style={{ fontFamily: "'Playfair Display', serif" }}>
-                      {service.title}
-                    </h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">
-                      {service.description}
-                    </p>
-                  </CardContent>
-                </Card>
+                <div className="text-[#CBA135] mb-4 group-hover:scale-110 transition-transform duration-300">
+                  {service.icon}
+                </div>
+                <h3 className="text-xl font-serif text-[#1A1A1A] mb-3 uppercase tracking-wide" style={{ fontFamily: "'Playfair Display', serif" }}>
+                  {service.title}
+                </h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  {service.description}
+                </p>
               </motion.div>
             ))}
           </div>
