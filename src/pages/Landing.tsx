@@ -25,8 +25,6 @@ export default function Landing() {
     email: "",
     message: ""
   });
-  const { scrollYProgress } = useScroll();
-  const heroOpacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,37 +47,36 @@ export default function Landing() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Sticky Navbar */}
+      {/* Minimal Navbar */}
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-          isScrolled ? "bg-white shadow-md" : "bg-transparent"
+          isScrolled ? "bg-white shadow-sm" : "bg-white"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
+        <div className="max-w-7xl mx-auto px-8 lg:px-16">
+          <div className="flex justify-between items-center h-24">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="text-2xl font-serif font-bold tracking-tight"
+              className="text-xl font-serif tracking-wide"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
-              <span className="text-[#1A1A1A]">Derrysell</span>
-              <span className="text-[#CBA135]"> DMCC</span>
+              <span className="text-[#1A1A1A]">DERRYSELL</span>
+              <br />
+              <span className="text-[#CBA135] text-sm">MANAGEMENT</span>
             </motion.div>
             
-            <div className="hidden md:flex space-x-8">
-              {["Home", "Services", "About", "Contact"].map((item, index) => (
+            <div className="hidden md:flex space-x-12">
+              {["HOME", "MARKETPLACE", "INTERNALS"].map((item, index) => (
                 <motion.button
                   key={item}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                   onClick={() => scrollToSection(item.toLowerCase())}
-                  className={`text-sm font-medium transition-colors hover:text-[#CBA135] ${
-                    isScrolled ? "text-[#1A1A1A]" : "text-white"
-                  }`}
+                  className="text-xs font-medium tracking-widest text-[#1A1A1A] hover:text-[#CBA135] transition-colors"
                 >
                   {item}
                 </motion.button>
@@ -89,100 +86,199 @@ export default function Landing() {
         </div>
       </motion.nav>
 
-      {/* Hero Section */}
-      <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
-        {/* Background with overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
-          <div className="absolute inset-0 opacity-20">
-            <img
-              src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1920&q=80"
-              alt="Business professionals"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="absolute inset-0 bg-gradient-to-r from-gray-900/90 to-gray-900/70" />
-        </div>
-
+      {/* Hero / About Us Section - Split Screen */}
+      <section id="home" className="relative min-h-screen flex items-center pt-24">
         {/* Golden geometric pattern - top right */}
-        <div className="absolute top-0 right-0 w-64 h-64 opacity-30">
+        <div className="absolute top-24 right-0 w-64 h-64 opacity-20 z-0">
           <svg viewBox="0 0 200 200" className="w-full h-full text-[#CBA135]">
-            <pattern id="pattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M0 20 L20 0 L40 20 L20 40 Z" fill="none" stroke="currentColor" strokeWidth="0.5"/>
+            <pattern id="pattern-hero" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+              <path d="M0 10 L10 0 L20 10 L10 20 Z" fill="none" stroke="currentColor" strokeWidth="0.3"/>
             </pattern>
-            <rect width="200" height="200" fill="url(#pattern)" />
+            <rect width="200" height="200" fill="url(#pattern-hero)" />
           </svg>
         </div>
 
-        {/* Hero Content */}
-        <motion.div
-          style={{ opacity: heroOpacity }}
-          className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
-        >
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight"
-            style={{ fontFamily: "'Playfair Display', serif" }}
-          >
-            Empowering Businesses to Succeed
-            <span className="block text-[#CBA135] mt-2">with Insight and Integrity</span>
-          </motion.h1>
-          
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed"
-          >
-            Trusted business consultancy registered under DMCC — delivering data-driven solutions for growth and innovation.
-          </motion.p>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <Button
-              onClick={() => scrollToSection("services")}
-              className="bg-[#CBA135] hover:bg-[#B8912F] text-white px-8 py-6 text-lg font-medium rounded-lg transition-all transform hover:scale-105 cursor-pointer"
+        <div className="max-w-7xl mx-auto px-8 lg:px-16 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left Content */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="space-y-8 relative z-10"
             >
-              Explore Our Services
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-          </motion.div>
-        </motion.div>
+              <h1
+                className="text-6xl lg:text-7xl font-serif text-[#1A1A1A] leading-tight"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
+                About Us
+              </h1>
+              
+              <div className="space-y-4 text-[#1A1A1A] leading-relaxed max-w-xl">
+                <p className="text-sm">
+                  Derrysell DMCC is a trusted business consultancy and service provider under the Dubai Multi Commodities Centre (DMCC). We specialize in delivering customized commercial, strategic, and research-driven solutions that help clients navigate complex markets with confidence.
+                </p>
+                <p className="text-sm">
+                  Our expertise combines global insight, local market understanding, and a commitment to integrity and excellence.
+                </p>
+              </div>
 
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5 }}
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ repeat: Infinity, duration: 1.5 }}
-            className="w-6 h-10 border-2 border-[#CBA135] rounded-full flex justify-center"
-          >
-            <div className="w-1 h-3 bg-[#CBA135] rounded-full mt-2" />
-          </motion.div>
-        </motion.div>
+              <Button
+                onClick={() => scrollToSection("marketplace")}
+                className="bg-[#CBA135] hover:bg-[#B8912F] text-white px-8 py-6 text-sm tracking-wide cursor-pointer"
+              >
+                READ MORE
+              </Button>
+            </motion.div>
+
+            {/* Right Image */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative"
+            >
+              <div className="relative">
+                <img
+                  src="https://harmless-tapir-303.convex.cloud/api/storage/732cc831-9363-4103-91f2-ae4573e559f3"
+                  alt="Professional"
+                  className="w-full h-auto"
+                />
+              </div>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Golden geometric pattern - bottom left */}
+        <div className="absolute bottom-0 left-0 w-48 h-48 opacity-20 z-0">
+          <svg viewBox="0 0 200 200" className="w-full h-full text-[#CBA135]">
+            <pattern id="pattern-hero-bottom" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+              <path d="M0 10 L10 0 L20 10 L10 20 Z" fill="none" stroke="currentColor" strokeWidth="0.3"/>
+            </pattern>
+            <rect width="200" height="200" fill="url(#pattern-hero-bottom)" />
+          </svg>
+        </div>
       </section>
 
-      {/* Services Section */}
-      <section id="services" className="py-20 bg-white relative">
-        {/* Golden geometric pattern - bottom left */}
-        <div className="absolute bottom-0 left-0 w-48 h-48 opacity-10">
+      {/* Mission Statement Section */}
+      <section id="marketplace" className="py-32 bg-[#F7F7F7] relative">
+        <div className="max-w-7xl mx-auto px-8 lg:px-16">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-4xl"
+          >
+            <h2
+              className="text-5xl font-serif text-[#1A1A1A] mb-12"
+              style={{ fontFamily: "'Playfair Display', serif" }}
+            >
+              Mission Statement
+            </h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div>
+                <h3 className="text-2xl font-serif text-[#1A1A1A] mb-4">
+                  Notre Mission
+                </h3>
+                <p className="text-sm text-gray-700 leading-relaxed">
+                  To empower businesses with actionable intelligence, strategic clarity, and measurable growth. We deliver customized solutions that combine global insight with local market understanding.
+                </p>
+              </div>
+              
+              <div>
+                <h3 className="text-2xl font-serif text-[#1A1A1A] mb-4">
+                  Exclycorporée
+                </h3>
+                <p className="text-sm text-gray-700 leading-relaxed">
+                  To be the preferred consultancy partner for innovation-led, sustainable business success across industries. We strive for excellence in every engagement.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Services Section - Inverted Split */}
+      <section id="internals" className="relative min-h-screen flex items-center py-24 bg-white">
+        {/* Golden geometric pattern - top right */}
+        <div className="absolute top-0 right-0 w-64 h-64 opacity-20 z-0">
           <svg viewBox="0 0 200 200" className="w-full h-full text-[#CBA135]">
-            <pattern id="pattern2" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M0 20 L20 0 L40 20 L20 40 Z" fill="none" stroke="currentColor" strokeWidth="0.5"/>
+            <pattern id="pattern-services" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+              <path d="M0 10 L10 0 L20 10 L10 20 Z" fill="none" stroke="currentColor" strokeWidth="0.3"/>
             </pattern>
-            <rect width="200" height="200" fill="url(#pattern2)" />
+            <rect width="200" height="200" fill="url(#pattern-services)" />
           </svg>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-8 lg:px-16 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left Image */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative order-2 lg:order-1"
+            >
+              <div className="relative">
+                <img
+                  src="https://harmless-tapir-303.convex.cloud/api/storage/732cc831-9363-4103-91f2-ae4573e559f3"
+                  alt="Professional Services"
+                  className="w-full h-auto"
+                />
+              </div>
+            </motion.div>
+
+            {/* Right Content */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="space-y-8 relative z-10 order-1 lg:order-2"
+            >
+              <h2
+                className="text-6xl lg:text-7xl font-serif text-[#1A1A1A] leading-tight"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
+                About Us
+              </h2>
+              
+              <div className="space-y-4 text-[#1A1A1A] leading-relaxed max-w-xl">
+                <p className="text-sm">
+                  Derrysell DMCC delivers comprehensive consultancy solutions designed to help your business grow, innovate, and thrive. Our expertise spans commercial information services, marketing management, strategic planning, and specialized research.
+                </p>
+                <p className="text-sm">
+                  We combine data-driven insights with practical implementation strategies to ensure measurable results for our clients across diverse industries.
+                </p>
+              </div>
+
+              <Button
+                onClick={() => scrollToSection("contact")}
+                className="bg-[#CBA135] hover:bg-[#B8912F] text-white px-8 py-6 text-sm tracking-wide cursor-pointer"
+              >
+                READ MORE
+              </Button>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Golden geometric pattern - bottom left */}
+        <div className="absolute bottom-0 left-0 w-48 h-48 opacity-20 z-0">
+          <svg viewBox="0 0 200 200" className="w-full h-full text-[#CBA135]">
+            <pattern id="pattern-services-bottom" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+              <path d="M0 10 L10 0 L20 10 L10 20 Z" fill="none" stroke="currentColor" strokeWidth="0.3"/>
+            </pattern>
+            <rect width="200" height="200" fill="url(#pattern-services-bottom)" />
+          </svg>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section className="py-32 bg-[#F7F7F7] relative">
+        <div className="max-w-7xl mx-auto px-8 lg:px-16">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -191,175 +287,46 @@ export default function Landing() {
             className="text-center mb-16"
           >
             <h2
-              className="text-4xl md:text-5xl font-bold text-[#1A1A1A] mb-4 tracking-tight"
+              className="text-5xl font-serif text-[#1A1A1A] mb-4"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
-              Our Expertise
+              Team Toall
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Comprehensive consultancy solutions designed to help your business grow, innovate, and thrive.
-            </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              {
-                icon: Briefcase,
-                title: "Commercial Information Services",
-                description: "Market intelligence, competitor benchmarking, and feasibility insights.",
-                delay: 0
-              },
-              {
-                icon: TrendingUp,
-                title: "Marketing Management",
-                description: "Strategic campaigns for brand positioning and customer engagement.",
-                delay: 0.1
-              },
-              {
-                icon: Users,
-                title: "Management Consultancies",
-                description: "Operational optimization and strategic business planning.",
-                delay: 0.2
-              },
-              {
-                icon: FileText,
-                title: "Feasibility Studies Consultancies",
-                description: "Financial and market viability assessments for new ventures.",
-                delay: 0.3
-              },
-              {
-                icon: Sprout,
-                title: "Agricultural Research and Consultancies",
-                description: "Innovative agri-solutions and sustainability-focused research.",
-                delay: 0.4
-              }
-            ].map((service, index) => (
+              { name: "Derrysell Derrysell", role: "Managing Director" },
+              { name: "Derrysell Derrysell", role: "Senior Partner" },
+              { name: "Derrysell Derrysell", role: "Consultant Lead" },
+              { name: "Derrysell Derrysell", role: "Research Director" }
+            ].map((member, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: service.delay }}
-                whileHover={{ y: -8 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="text-center"
               >
-                <Card className="h-full border border-gray-200 hover:border-[#CBA135] transition-all duration-300 shadow-sm hover:shadow-lg">
-                  <CardContent className="p-8">
-                    <div className="w-14 h-14 bg-[#CBA135]/10 rounded-lg flex items-center justify-center mb-6">
-                      <service.icon className="w-7 h-7 text-[#CBA135]" />
-                    </div>
-                    <h3 className="text-xl font-bold text-[#1A1A1A] mb-3 tracking-tight">
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed">
-                      {service.description}
-                    </p>
-                  </CardContent>
-                </Card>
+                <div className="bg-gray-200 aspect-square mb-4 rounded-sm overflow-hidden">
+                  <img
+                    src="https://harmless-tapir-303.convex.cloud/api/storage/732cc831-9363-4103-91f2-ae4573e559f3"
+                    alt={member.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 className="text-sm font-medium text-[#1A1A1A]">{member.name}</h3>
+                <p className="text-xs text-gray-600">{member.role}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="py-20 bg-[#F7F7F7] relative">
-        {/* Golden geometric pattern - top right */}
-        <div className="absolute top-0 right-0 w-56 h-56 opacity-10">
-          <svg viewBox="0 0 200 200" className="w-full h-full text-[#CBA135]">
-            <pattern id="pattern3" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M0 20 L20 0 L40 20 L20 40 Z" fill="none" stroke="currentColor" strokeWidth="0.5"/>
-            </pattern>
-            <rect width="200" height="200" fill="url(#pattern3)" />
-          </svg>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2
-              className="text-4xl md:text-5xl font-bold text-[#1A1A1A] mb-4 tracking-tight"
-              style={{ fontFamily: "'Playfair Display', serif" }}
-            >
-              About Derrysell DMCC
-            </h2>
-          </motion.div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="space-y-6"
-            >
-              <p className="text-lg text-gray-700 leading-relaxed">
-                Derrysell DMCC is a trusted business consultancy and service provider under the Dubai Multi Commodities Centre (DMCC).
-              </p>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                We specialize in delivering customized commercial, strategic, and research-driven solutions that help clients navigate complex markets with confidence.
-              </p>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                Our expertise combines global insight, local market understanding, and a commitment to integrity and excellence.
-              </p>
-
-              <div className="mt-8 pt-8 border-t border-gray-300 space-y-6">
-                <div>
-                  <h3 className="text-xl font-bold text-[#CBA135] mb-2 tracking-tight">
-                    Mission Statement
-                  </h3>
-                  <p className="text-gray-700 leading-relaxed">
-                    To empower businesses with actionable intelligence, strategic clarity, and measurable growth.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-[#CBA135] mb-2 tracking-tight">
-                    Our Vision
-                  </h3>
-                  <p className="text-gray-700 leading-relaxed">
-                    To be the preferred consultancy partner for innovation-led, sustainable business success across industries.
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="relative"
-            >
-              <div className="relative rounded-lg overflow-hidden shadow-2xl">
-                <img
-                  src="https://harmless-tapir-303.convex.cloud/api/storage/732cc831-9363-4103-91f2-ae4573e559f3"
-                  alt="Dubai Business Professional"
-                  className="w-full h-auto"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/20 to-transparent" />
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-white relative">
-        {/* Golden geometric pattern - bottom left */}
-        <div className="absolute bottom-0 left-0 w-48 h-48 opacity-10">
-          <svg viewBox="0 0 200 200" className="w-full h-full text-[#CBA135]">
-            <pattern id="pattern4" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M0 20 L20 0 L40 20 L20 40 Z" fill="none" stroke="currentColor" strokeWidth="0.5"/>
-            </pattern>
-            <rect width="200" height="200" fill="url(#pattern4)" />
-          </svg>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="contact" className="py-32 bg-white relative">
+        <div className="max-w-7xl mx-auto px-8 lg:px-16">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -368,17 +335,17 @@ export default function Landing() {
             className="text-center mb-16"
           >
             <h2
-              className="text-4xl md:text-5xl font-bold text-[#1A1A1A] mb-4 tracking-tight"
+              className="text-5xl font-serif text-[#1A1A1A] mb-4"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
               Get in Touch
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-sm text-gray-600">
               Let's discuss how we can help your business thrive
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -387,8 +354,8 @@ export default function Landing() {
             >
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                    Name
+                  <label htmlFor="name" className="block text-xs font-medium text-gray-700 mb-2 tracking-wide">
+                    NAME
                   </label>
                   <Input
                     id="name"
@@ -401,8 +368,8 @@ export default function Landing() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email
+                  <label htmlFor="email" className="block text-xs font-medium text-gray-700 mb-2 tracking-wide">
+                    EMAIL
                   </label>
                   <Input
                     id="email"
@@ -415,8 +382,8 @@ export default function Landing() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                    Message
+                  <label htmlFor="message" className="block text-xs font-medium text-gray-700 mb-2 tracking-wide">
+                    MESSAGE
                   </label>
                   <Textarea
                     id="message"
@@ -430,10 +397,9 @@ export default function Landing() {
                 </div>
                 <Button
                   type="submit"
-                  className="w-full bg-[#CBA135] hover:bg-[#B8912F] text-white py-6 text-lg font-medium cursor-pointer transition-all transform hover:scale-105"
+                  className="w-full bg-[#CBA135] hover:bg-[#B8912F] text-white py-6 text-sm tracking-wide cursor-pointer"
                 >
-                  Send Message
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  SEND MESSAGE
                 </Button>
               </form>
             </motion.div>
@@ -445,61 +411,50 @@ export default function Landing() {
               transition={{ duration: 0.6 }}
               className="space-y-8"
             >
-              <div className="bg-[#F7F7F7] p-8 rounded-lg">
-                <h3 className="text-2xl font-bold text-[#1A1A1A] mb-6 tracking-tight">
-                  Contact Information
-                </h3>
-                <div className="space-y-6">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-[#CBA135]/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <MapPin className="w-6 h-6 text-[#CBA135]" />
-                    </div>
-                    <div>
-                      <p className="font-medium text-[#1A1A1A]">Office Address</p>
-                      <p className="text-gray-600">
-                        Office 2104, Jumeirah Lakes Towers<br />
-                        Dubai, UAE
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-[#CBA135]/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Phone className="w-6 h-6 text-[#CBA135]" />
-                    </div>
-                    <div>
-                      <p className="font-medium text-[#1A1A1A]">Phone</p>
-                      <p className="text-gray-600">+971 4 123 4567</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-[#CBA135]/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Mail className="w-6 h-6 text-[#CBA135]" />
-                    </div>
-                    <div>
-                      <p className="font-medium text-[#1A1A1A]">Email</p>
-                      <p className="text-gray-600">info@derrysell.com</p>
-                    </div>
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <MapPin className="w-5 h-5 text-[#CBA135] flex-shrink-0 mt-1" />
+                  <div>
+                    <p className="text-xs font-medium text-[#1A1A1A] tracking-wide mb-1">OFFICE ADDRESS</p>
+                    <p className="text-sm text-gray-600">
+                      Office 2104, Jumeirah Lakes Towers<br />
+                      Dubai, UAE
+                    </p>
                   </div>
                 </div>
-
-                <div className="mt-8 pt-8 border-t border-gray-300">
-                  <p className="text-sm font-medium text-[#1A1A1A] mb-4">Follow Us</p>
-                  <div className="flex space-x-4">
-                    <a
-                      href="https://linkedin.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-10 h-10 bg-[#CBA135] hover:bg-[#B8912F] rounded-lg flex items-center justify-center transition-colors cursor-pointer"
-                    >
-                      <Linkedin className="w-5 h-5 text-white" />
-                    </a>
-                    <a
-                      href="mailto:info@derrysell.com"
-                      className="w-10 h-10 bg-[#CBA135] hover:bg-[#B8912F] rounded-lg flex items-center justify-center transition-colors cursor-pointer"
-                    >
-                      <Mail className="w-5 h-5 text-white" />
-                    </a>
+                <div className="flex items-start space-x-4">
+                  <Phone className="w-5 h-5 text-[#CBA135] flex-shrink-0 mt-1" />
+                  <div>
+                    <p className="text-xs font-medium text-[#1A1A1A] tracking-wide mb-1">PHONE</p>
+                    <p className="text-sm text-gray-600">+971 4 123 4567</p>
                   </div>
+                </div>
+                <div className="flex items-start space-x-4">
+                  <Mail className="w-5 h-5 text-[#CBA135] flex-shrink-0 mt-1" />
+                  <div>
+                    <p className="text-xs font-medium text-[#1A1A1A] tracking-wide mb-1">EMAIL</p>
+                    <p className="text-sm text-gray-600">info@derrysell.com</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-8 border-t border-gray-200">
+                <p className="text-xs font-medium text-[#1A1A1A] mb-4 tracking-wide">FOLLOW US</p>
+                <div className="flex space-x-4">
+                  <a
+                    href="https://linkedin.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 bg-[#CBA135] hover:bg-[#B8912F] flex items-center justify-center transition-colors cursor-pointer"
+                  >
+                    <Linkedin className="w-5 h-5 text-white" />
+                  </a>
+                  <a
+                    href="mailto:info@derrysell.com"
+                    className="w-10 h-10 bg-[#CBA135] hover:bg-[#B8912F] flex items-center justify-center transition-colors cursor-pointer"
+                  >
+                    <Mail className="w-5 h-5 text-white" />
+                  </a>
                 </div>
               </div>
             </motion.div>
@@ -509,9 +464,9 @@ export default function Landing() {
 
       {/* Footer */}
       <footer className="bg-[#F7F7F7] py-8 border-t border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center text-gray-600">
-            <p>&copy; {new Date().getFullYear()} Derrysell DMCC. All rights reserved.</p>
+        <div className="max-w-7xl mx-auto px-8 lg:px-16">
+          <div className="text-center text-xs text-gray-600 tracking-wide">
+            <p>&copy; {new Date().getFullYear()} DERRYSELL DMCC. ALL RIGHTS RESERVED.</p>
           </div>
         </div>
       </footer>
