@@ -68,9 +68,9 @@ export default function Landing() {
               className="text-xl font-serif tracking-wide"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
-              <span className="text-[#1A1A1A]">DERRYSELL</span>
+              <span className="text-[#1A1A1A]">DERRYSEL</span>
               <br />
-              <span className="text-[#CBA135] text-sm">MANAGEMENT</span>
+              <span className="text-[#D4AF37] text-sm">MANAGEMENT</span>
             </motion.div>
             
             <div className="hidden md:flex space-x-12">
@@ -86,7 +86,8 @@ export default function Landing() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                   onClick={() => scrollToSection(item.id)}
-                  className="text-xs font-medium tracking-widest text-[#1A1A1A] hover:text-[#CBA135] transition-colors"
+                  className="text-xs font-medium tracking-widest text-[#1A1A1A] hover:text-[#D4AF37] transition-colors"
+                  style={{ fontFamily: "'Poppins', sans-serif" }}
                 >
                   {item.label}
                 </motion.button>
@@ -141,7 +142,8 @@ export default function Landing() {
               
               <Button
                 onClick={() => scrollToSection("services")}
-                className="bg-[#CBA135] hover:bg-[#B8912F] text-white px-10 py-6 text-sm tracking-widest cursor-pointer rounded-full uppercase font-medium"
+                className="bg-[#D4AF37] hover:bg-[#C5A028] text-white px-10 py-6 text-sm tracking-widest cursor-pointer rounded-full uppercase font-medium"
+                style={{ fontFamily: "'Playfair Display', serif" }}
               >
                 Concept
               </Button>
@@ -208,7 +210,8 @@ export default function Landing() {
                   </p>
                   <Button
                     size="sm"
-                    className="bg-[#CBA135] hover:bg-[#B8912F] text-white text-xs px-4 py-2 rounded-full cursor-pointer uppercase tracking-wide"
+                    className="bg-[#D4AF37] hover:bg-[#C5A028] text-white text-xs px-4 py-2 rounded-full cursor-pointer uppercase tracking-wide"
+                    style={{ fontFamily: "'Playfair Display', serif" }}
                   >
                     Explore
                   </Button>
@@ -228,7 +231,8 @@ export default function Landing() {
                   </p>
                   <Button
                     size="sm"
-                    className="bg-[#CBA135] hover:bg-[#B8912F] text-white text-xs px-4 py-2 rounded-full cursor-pointer uppercase tracking-wide"
+                    className="bg-[#D4AF37] hover:bg-[#C5A028] text-white text-xs px-4 py-2 rounded-full cursor-pointer uppercase tracking-wide"
+                    style={{ fontFamily: "'Playfair Display', serif" }}
                   >
                     Contact
                   </Button>
@@ -255,7 +259,7 @@ export default function Landing() {
             >
               Our Expertise
             </h2>
-            <p className="text-base text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base text-gray-600 max-w-3xl mx-auto" style={{ fontFamily: "'Poppins', sans-serif" }}>
               Comprehensive consultancy solutions designed to help your business grow, innovate, and thrive.
             </p>
           </motion.div>
@@ -263,27 +267,22 @@ export default function Landing() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             {[
               {
-                icon: <BarChart3 className="w-8 h-8" />,
                 title: "Commercial Information Services",
                 description: "Market intelligence, competitor benchmarking, and feasibility insights."
               },
               {
-                icon: <Megaphone className="w-8 h-8" />,
                 title: "Marketing Management",
                 description: "Strategic campaigns for brand positioning and customer engagement."
               },
               {
-                icon: <Building2 className="w-8 h-8" />,
                 title: "Management Consultancies",
                 description: "Operational optimization and strategic business planning."
               },
               {
-                icon: <ClipboardCheck className="w-8 h-8" />,
                 title: "Feasibility Studies Consultancies",
                 description: "Financial and market viability assessments for new ventures."
               },
               {
-                icon: <Leaf className="w-8 h-8" />,
                 title: "Agricultural Research and Consultancies",
                 description: "Innovative agri-solutions and sustainability-focused research."
               }
@@ -296,13 +295,10 @@ export default function Landing() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="group"
               >
-                <div className="text-[#CBA135] mb-4 group-hover:scale-110 transition-transform duration-300">
-                  {service.icon}
-                </div>
                 <h3 className="text-xl font-serif text-[#1A1A1A] mb-3 uppercase tracking-wide" style={{ fontFamily: "'Playfair Display', serif" }}>
                   {service.title}
                 </h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
+                <p className="text-sm text-gray-600 leading-relaxed" style={{ fontFamily: "'Poppins', sans-serif" }}>
                   {service.description}
                 </p>
               </motion.div>
@@ -335,7 +331,7 @@ export default function Landing() {
               className="text-5xl font-serif text-[#1A1A1A] mb-12"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
-              About Derrysell DMCC
+              About Derrysel DMCC
             </h2>
           </motion.div>
 
@@ -348,13 +344,13 @@ export default function Landing() {
               transition={{ duration: 0.6 }}
               className="space-y-6"
             >
-              <p className="text-base text-gray-700 leading-relaxed">
-                Derrysell DMCC is a trusted business consultancy and service provider under the Dubai Multi Commodities Centre (DMCC).
+              <p className="text-base text-gray-700 leading-relaxed" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                Derrysel DMCC is a trusted business consultancy and service provider under the Dubai Multi Commodities Centre (DMCC).
               </p>
-              <p className="text-base text-gray-700 leading-relaxed">
+              <p className="text-base text-gray-700 leading-relaxed" style={{ fontFamily: "'Poppins', sans-serif" }}>
                 We specialize in delivering customized commercial, strategic, and research-driven solutions that help clients navigate complex markets with confidence.
               </p>
-              <p className="text-base text-gray-700 leading-relaxed">
+              <p className="text-base text-gray-700 leading-relaxed" style={{ fontFamily: "'Poppins', sans-serif" }}>
                 Our expertise combines global insight, local market understanding, and a commitment to integrity and excellence.
               </p>
             </motion.div>
@@ -387,7 +383,7 @@ export default function Landing() {
               <h3 className="text-2xl font-serif text-[#1A1A1A] mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
                 Mission Statement
               </h3>
-              <p className="text-sm text-gray-700 leading-relaxed">
+              <p className="text-sm text-gray-700 leading-relaxed" style={{ fontFamily: "'Poppins', sans-serif" }}>
                 To empower businesses with actionable intelligence, strategic clarity, and measurable growth.
               </p>
             </div>
@@ -396,7 +392,7 @@ export default function Landing() {
               <h3 className="text-2xl font-serif text-[#1A1A1A] mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
                 Our Vision
               </h3>
-              <p className="text-sm text-gray-700 leading-relaxed">
+              <p className="text-sm text-gray-700 leading-relaxed" style={{ fontFamily: "'Poppins', sans-serif" }}>
                 To be the preferred consultancy partner for innovation-led, sustainable business success across industries.
               </p>
             </div>
@@ -420,7 +416,7 @@ export default function Landing() {
             >
               Get in Touch
             </h2>
-            <p className="text-base text-gray-600">
+            <p className="text-base text-gray-600" style={{ fontFamily: "'Poppins', sans-serif" }}>
               Let's discuss how we can help your business thrive
             </p>
           </motion.div>
@@ -477,7 +473,8 @@ export default function Landing() {
                 </div>
                 <Button
                   type="submit"
-                  className="w-full bg-[#CBA135] hover:bg-[#B8912F] text-white py-6 text-sm tracking-wide cursor-pointer"
+                  className="w-full bg-[#D4AF37] hover:bg-[#C5A028] text-white py-6 text-sm tracking-wide cursor-pointer"
+                  style={{ fontFamily: "'Playfair Display', serif" }}
                 >
                   SEND MESSAGE
                 </Button>
@@ -493,7 +490,7 @@ export default function Landing() {
             >
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <MapPin className="w-5 h-5 text-[#CBA135] flex-shrink-0 mt-1" />
+                  <MapPin className="w-5 h-5 text-[#D4AF37] flex-shrink-0 mt-1" />
                   <div>
                     <p className="text-xs font-medium text-[#1A1A1A] tracking-wide mb-1">OFFICE ADDRESS</p>
                     <p className="text-sm text-gray-600">
@@ -503,14 +500,14 @@ export default function Landing() {
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
-                  <Phone className="w-5 h-5 text-[#CBA135] flex-shrink-0 mt-1" />
+                  <Phone className="w-5 h-5 text-[#D4AF37] flex-shrink-0 mt-1" />
                   <div>
                     <p className="text-xs font-medium text-[#1A1A1A] tracking-wide mb-1">PHONE</p>
                     <p className="text-sm text-gray-600">+971 4 123 4567</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
-                  <Mail className="w-5 h-5 text-[#CBA135] flex-shrink-0 mt-1" />
+                  <Mail className="w-5 h-5 text-[#D4AF37] flex-shrink-0 mt-1" />
                   <div>
                     <p className="text-xs font-medium text-[#1A1A1A] tracking-wide mb-1">EMAIL</p>
                     <p className="text-sm text-gray-600">info@derrysell.com</p>
@@ -525,13 +522,13 @@ export default function Landing() {
                     href="https://linkedin.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 bg-[#CBA135] hover:bg-[#B8912F] flex items-center justify-center transition-colors cursor-pointer rounded-sm"
+                    className="w-10 h-10 bg-[#D4AF37] hover:bg-[#C5A028] flex items-center justify-center transition-colors cursor-pointer rounded-sm"
                   >
                     <Linkedin className="w-5 h-5 text-white" />
                   </a>
                   <a
                     href="mailto:info@derrysell.com"
-                    className="w-10 h-10 bg-[#CBA135] hover:bg-[#B8912F] flex items-center justify-center transition-colors cursor-pointer rounded-sm"
+                    className="w-10 h-10 bg-[#D4AF37] hover:bg-[#C5A028] flex items-center justify-center transition-colors cursor-pointer rounded-sm"
                   >
                     <Mail className="w-5 h-5 text-white" />
                   </a>
@@ -546,7 +543,7 @@ export default function Landing() {
       <footer className="bg-white py-8 border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
           <div className="text-center text-xs text-gray-600 tracking-wide">
-            <p>&copy; {new Date().getFullYear()} DERRYSELL DMCC. ALL RIGHTS RESERVED.</p>
+            <p style={{ fontFamily: "'Poppins', sans-serif" }}>&copy; {new Date().getFullYear()} DERRYSEL DMCC. ALL RIGHTS RESERVED.</p>
           </div>
         </div>
       </footer>

@@ -52,7 +52,7 @@
   --card-foreground: oklch(0.2 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.2 0 0);
-  --primary: oklch(0.65 0.12 75); /* #CBA135 - Dubai gold */
+  --primary: oklch(0.70 0.15 75); /* #D4AF37 - Shiny Dubai gold */
   --primary-foreground: oklch(1 0 0);
   --secondary: oklch(0.96 0 0); /* #F5F5F5 - Light gray */
   --secondary-foreground: oklch(0.2 0 0);
