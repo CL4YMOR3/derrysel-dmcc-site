@@ -97,71 +97,145 @@ export default function Landing() {
       </motion.nav>
 
       {/* Hero Section */}
-      <section id="home" className="relative min-h-screen flex items-center pt-24 bg-[#F5F5F5]">
-        {/* Golden geometric pattern - top right */}
-        <div className="absolute top-24 right-0 w-64 h-64 opacity-20 z-0">
+      <section id="home" className="relative min-h-screen flex items-center pt-24 bg-white">
+        {/* Golden geometric pattern - top left */}
+        <div className="absolute top-32 left-0 w-80 h-80 opacity-15 z-0">
           <svg viewBox="0 0 200 200" className="w-full h-full text-[#CBA135]">
-            <pattern id="pattern-hero" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-              <path d="M0 10 L10 0 L20 10 L10 20 Z" fill="none" stroke="currentColor" strokeWidth="0.3"/>
+            <pattern id="pattern-hero-left" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
+              <circle cx="15" cy="15" r="12" fill="none" stroke="currentColor" strokeWidth="0.5"/>
+              <circle cx="15" cy="15" r="8" fill="none" stroke="currentColor" strokeWidth="0.5"/>
+              <circle cx="15" cy="15" r="4" fill="none" stroke="currentColor" strokeWidth="0.5"/>
             </pattern>
-            <rect width="200" height="200" fill="url(#pattern-hero)" />
+            <rect width="200" height="200" fill="url(#pattern-hero-left)" />
+          </svg>
+        </div>
+
+        {/* Golden geometric pattern - bottom right */}
+        <div className="absolute bottom-32 right-0 w-80 h-80 opacity-15 z-0">
+          <svg viewBox="0 0 200 200" className="w-full h-full text-[#CBA135]">
+            <pattern id="pattern-hero-right" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
+              <path d="M0 15 L15 0 L30 15 L15 30 Z" fill="none" stroke="currentColor" strokeWidth="0.5"/>
+              <path d="M7.5 15 L15 7.5 L22.5 15 L15 22.5 Z" fill="none" stroke="currentColor" strokeWidth="0.5"/>
+            </pattern>
+            <rect width="200" height="200" fill="url(#pattern-hero-right)" />
           </svg>
         </div>
 
         <div className="max-w-7xl mx-auto px-8 lg:px-16 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             {/* Left Content */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="space-y-8 relative z-10"
+              className="space-y-10 relative z-10"
             >
               <h1
-                className="text-5xl lg:text-6xl font-serif text-[#1A1A1A] leading-tight"
+                className="text-6xl lg:text-7xl font-serif text-[#1A1A1A] leading-tight uppercase"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
-                Empowering Businesses to Succeed with Insight and Integrity
+                Luxury<br />
+                Consultancy<br />
+                Dubai
               </h1>
               
-              <p className="text-base text-gray-700 leading-relaxed max-w-xl">
-                Trusted business consultancy registered under DMCC — delivering data-driven solutions for growth and innovation.
-              </p>
-
               <Button
                 onClick={() => scrollToSection("services")}
-                className="bg-[#CBA135] hover:bg-[#B8912F] text-white px-8 py-6 text-sm tracking-wide cursor-pointer"
+                className="bg-[#CBA135] hover:bg-[#B8912F] text-white px-10 py-6 text-sm tracking-widest cursor-pointer rounded-full uppercase font-medium"
               >
-                EXPLORE OUR SERVICES
+                Concept
               </Button>
             </motion.div>
 
-            {/* Right Image */}
+            {/* Right Image Collage */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative"
             >
-              <div className="relative">
-                <img
-                  src="https://harmless-tapir-303.convex.cloud/api/storage/732cc831-9363-4103-91f2-ae4573e559f3"
-                  alt="Professional Executive"
-                  className="w-full h-auto rounded-sm"
-                />
+              <div className="grid grid-cols-2 gap-4 relative">
+                {/* Top row - 2 images */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  className="relative h-64 bg-[#F5F5F5] rounded-sm overflow-hidden"
+                >
+                  <img
+                    src="https://harmless-tapir-303.convex.cloud/api/storage/732cc831-9363-4103-91f2-ae4573e559f3"
+                    alt="Professional 1"
+                    className="w-full h-full object-cover"
+                  />
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  className="relative h-64 bg-[#F5F5F5] rounded-sm overflow-hidden"
+                >
+                  <img
+                    src="https://harmless-tapir-303.convex.cloud/api/storage/732cc831-9363-4103-91f2-ae4573e559f3"
+                    alt="Professional 2"
+                    className="w-full h-full object-cover"
+                  />
+                </motion.div>
+
+                {/* Golden wave divider */}
+                <div className="col-span-2 relative h-12 -my-2">
+                  <svg viewBox="0 0 400 50" className="w-full h-full" preserveAspectRatio="none">
+                    <path
+                      d="M0 25 Q100 10, 200 25 T400 25"
+                      fill="none"
+                      stroke="#CBA135"
+                      strokeWidth="3"
+                    />
+                  </svg>
+                </div>
+
+                {/* Bottom row - 2 cards */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.5 }}
+                  className="relative bg-white border border-gray-200 rounded-sm p-6 shadow-sm"
+                >
+                  <h3 className="text-sm font-serif text-[#1A1A1A] mb-2 uppercase tracking-wide" style={{ fontFamily: "'Playfair Display', serif" }}>
+                    SESCT MONTS<br />DUBEN
+                  </h3>
+                  <p className="text-xs text-gray-600 leading-relaxed mb-4">
+                    Comprehensive business solutions for growth and innovation.
+                  </p>
+                  <Button
+                    size="sm"
+                    className="bg-[#CBA135] hover:bg-[#B8912F] text-white text-xs px-4 py-2 rounded-full cursor-pointer uppercase tracking-wide"
+                  >
+                    Explore
+                  </Button>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.6 }}
+                  className="relative bg-white border border-gray-200 rounded-sm p-6 shadow-sm"
+                >
+                  <h3 className="text-sm font-serif text-[#1A1A1A] mb-2 uppercase tracking-wide" style={{ fontFamily: "'Playfair Display', serif" }}>
+                    SESUT MONTS<br />DUBLN
+                  </h3>
+                  <p className="text-xs text-gray-600 leading-relaxed mb-4">
+                    Strategic consultancy for sustainable success.
+                  </p>
+                  <Button
+                    size="sm"
+                    className="bg-[#CBA135] hover:bg-[#B8912F] text-white text-xs px-4 py-2 rounded-full cursor-pointer uppercase tracking-wide"
+                  >
+                    Contact
+                  </Button>
+                </motion.div>
               </div>
             </motion.div>
           </div>
-        </div>
-
-        {/* Golden geometric pattern - bottom left */}
-        <div className="absolute bottom-0 left-0 w-48 h-48 opacity-20 z-0">
-          <svg viewBox="0 0 200 200" className="w-full h-full text-[#CBA135]">
-            <pattern id="pattern-hero-bottom" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-              <path d="M0 10 L10 0 L20 10 L10 20 Z" fill="none" stroke="currentColor" strokeWidth="0.3"/>
-            </pattern>
-            <rect width="200" height="200" fill="url(#pattern-hero-bottom)" />
-          </svg>
         </div>
       </section>
 
