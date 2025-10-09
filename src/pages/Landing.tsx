@@ -15,12 +15,14 @@ import {
   Megaphone,
   Building2,
   ClipboardCheck,
-  Leaf
+  Leaf,
+  Menu
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useState, useEffect } from "react";
 import { toast } from "sonner";
 
@@ -130,6 +132,38 @@ export default function Landing() {
                 </motion.button>
               ))}
             </div>
+
+            {/* Mobile Menu */}
+            <Sheet>
+              <SheetTrigger asChild className="md:hidden">
+                <Button variant="ghost" size="icon">
+                  <Menu className="h-6 w-6" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[250px] sm:w-[300px]">
+                <nav className="flex flex-col gap-6 mt-8">
+                  {[
+                    { label: "HOME", id: "home" },
+                    { label: "SERVICES", id: "services" },
+                    { label: "ABOUT", id: "about" },
+                    { label: "CONTACT", id: "contact" }
+                  ].map((item) => (
+                    <button
+                      key={item.label}
+                      onClick={() => {
+                        scrollToSection(item.id);
+                        // Close the sheet after navigation
+                        document.querySelector('[data-slot="sheet-close"]')?.dispatchEvent(new Event('click', { bubbles: true }));
+                      }}
+                      className="text-left text-sm font-medium tracking-widest text-[#1A1A1A] hover:text-[#D4AF37] transition-colors"
+                      style={{ fontFamily: "'Poppins', sans-serif" }}
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                </nav>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </motion.nav>
