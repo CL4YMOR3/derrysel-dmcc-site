@@ -96,12 +96,18 @@ export default function Landing() {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="text-xl font-serif tracking-wide"
-              style={{ fontFamily: "'Playfair Display', serif" }}
+              className="flex items-center gap-3"
             >
-              <span className="text-[#1A1A1A]">DERRYSEL</span>
-              <br />
-              <span className="text-[#D4AF37] text-sm">MANAGEMENT</span>
+              <img
+                src="https://harmless-tapir-303.convex.cloud/api/storage/01e4b1b7-a536-41e4-9744-6b6e343f54bc"
+                alt="Derrysel DMCC Logo"
+                className="h-12 w-auto"
+              />
+              <div className="text-xl font-serif tracking-wide" style={{ fontFamily: "'Playfair Display', serif" }}>
+                <span className="text-[#1A1A1A]">DERRYSEL</span>
+                <br />
+                <span className="text-[#D4AF37] text-sm">DMCC</span>
+              </div>
             </motion.div>
             
             <div className="hidden md:flex space-x-12">
