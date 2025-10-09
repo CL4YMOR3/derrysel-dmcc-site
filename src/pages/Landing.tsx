@@ -198,7 +198,7 @@ export default function Landing() {
               
               <Button
                 onClick={() => scrollToSection("services")}
-                className="bg-gradient-to-r from-[#F4D03F] to-[#D4AF37] hover:from-[#E5C130] hover:to-[#C5A028] text-white px-10 py-6 text-sm tracking-widest cursor-pointer rounded-full uppercase font-medium"
+                className="bg-gradient-to-r from-[#F4D03F] to-[#D4AF37] hover:from-[#E5C130] hover:to-[#C5A028] text-white px-10 py-6 text-sm tracking-widest cursor-pointer rounded-full uppercase font-medium transition-all duration-300"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
                 Concept
@@ -266,7 +266,7 @@ export default function Landing() {
                   </p>
                   <Button
                     size="sm"
-                    className="bg-gradient-to-r from-[#F4D03F] to-[#D4AF37] hover:from-[#E5C130] hover:to-[#C5A028] text-white text-xs px-4 py-2 rounded-full cursor-pointer uppercase tracking-wide"
+                    className="bg-gradient-to-r from-[#F4D03F] to-[#D4AF37] hover:from-[#E5C130] hover:to-[#C5A028] text-white text-xs px-4 py-2 rounded-full cursor-pointer uppercase tracking-wide transition-all duration-300"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
                     Explore
@@ -287,7 +287,7 @@ export default function Landing() {
                   </p>
                   <Button
                     size="sm"
-                    className="bg-gradient-to-r from-[#F4D03F] to-[#D4AF37] hover:from-[#E5C130] hover:to-[#C5A028] text-white text-xs px-4 py-2 rounded-full cursor-pointer uppercase tracking-wide"
+                    className="bg-gradient-to-r from-[#F4D03F] to-[#D4AF37] hover:from-[#E5C130] hover:to-[#C5A028] text-white text-xs px-4 py-2 rounded-full cursor-pointer uppercase tracking-wide transition-all duration-300"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
                     Contact
@@ -621,7 +621,7 @@ export default function Landing() {
                 </div>
                 <Button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-[#F4D03F] to-[#D4AF37] hover:from-[#E5C130] hover:to-[#C5A028] text-white py-6 text-sm tracking-wide cursor-pointer"
+                  className="w-full bg-gradient-to-r from-[#F4D03F] to-[#D4AF37] hover:from-[#E5C130] hover:to-[#C5A028] text-white py-6 text-sm tracking-wide cursor-pointer transition-all duration-300"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
                   SEND MESSAGE
@@ -670,13 +670,13 @@ export default function Landing() {
                     href="https://linkedin.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 bg-gradient-to-r from-[#F4D03F] to-[#D4AF37] hover:from-[#E5C130] hover:to-[#C5A028] flex items-center justify-center transition-colors cursor-pointer rounded-sm"
+                    className="w-10 h-10 bg-gradient-to-r from-[#F4D03F] to-[#D4AF37] hover:from-[#E5C130] hover:to-[#C5A028] flex items-center justify-center transition-all duration-300 cursor-pointer rounded-sm"
                   >
                     <Linkedin className="w-5 h-5 text-white" />
                   </a>
                   <a
                     href="mailto:info@derrysell.com"
-                    className="w-10 h-10 bg-gradient-to-r from-[#F4D03F] to-[#D4AF37] hover:from-[#E5C130] hover:to-[#C5A028] flex items-center justify-center transition-colors cursor-pointer rounded-sm"
+                    className="w-10 h-10 bg-gradient-to-r from-[#F4D03F] to-[#D4AF37] hover:from-[#E5C130] hover:to-[#C5A028] flex items-center justify-center transition-all duration-300 cursor-pointer rounded-sm"
                   >
                     <Mail className="w-5 h-5 text-white" />
                   </a>
