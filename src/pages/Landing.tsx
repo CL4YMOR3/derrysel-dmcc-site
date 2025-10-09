@@ -98,50 +98,40 @@ export default function Landing() {
       </motion.nav>
 
       {/* Hero Section */}
-      <section id="home" className="relative min-h-screen flex items-center pt-24 bg-white">
-        {/* Golden geometric pattern - top left */}
-        <div className="absolute top-32 left-0 w-80 h-80 opacity-15 z-0">
+      <section id="home" className="relative min-h-screen flex items-center pt-24 bg-white overflow-hidden">
+        {/* Enhanced Arabic geometric pattern - top left */}
+        <div className="absolute top-20 left-0 w-96 h-96 opacity-15 z-0">
           <svg viewBox="0 0 200 200" className="w-full h-full text-[#CBA135]">
-            <pattern id="pattern-hero-left" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
-              <circle cx="15" cy="15" r="12" fill="none" stroke="currentColor" strokeWidth="0.5"/>
-              <circle cx="15" cy="15" r="8" fill="none" stroke="currentColor" strokeWidth="0.5"/>
-              <circle cx="15" cy="15" r="4" fill="none" stroke="currentColor" strokeWidth="0.5"/>
+            <pattern id="pattern-hero-left" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+              <circle cx="20" cy="20" r="15" fill="none" stroke="currentColor" strokeWidth="0.5"/>
+              <circle cx="20" cy="20" r="10" fill="none" stroke="currentColor" strokeWidth="0.5"/>
+              <circle cx="20" cy="20" r="5" fill="none" stroke="currentColor" strokeWidth="0.5"/>
+              <path d="M20 5 L20 35 M5 20 L35 20" stroke="currentColor" strokeWidth="0.3" opacity="0.5"/>
             </pattern>
             <rect width="200" height="200" fill="url(#pattern-hero-left)" />
           </svg>
         </div>
 
-        {/* Golden geometric pattern - bottom right */}
-        <div className="absolute bottom-32 right-0 w-80 h-80 opacity-15 z-0">
+        {/* Enhanced Arabic geometric pattern - bottom right */}
+        <div className="absolute bottom-20 right-0 w-96 h-96 opacity-15 z-0">
           <svg viewBox="0 0 200 200" className="w-full h-full text-[#CBA135]">
-            <pattern id="pattern-hero-right" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
-              <path d="M0 15 L15 0 L30 15 L15 30 Z" fill="none" stroke="currentColor" strokeWidth="0.5"/>
-              <path d="M7.5 15 L15 7.5 L22.5 15 L15 22.5 Z" fill="none" stroke="currentColor" strokeWidth="0.5"/>
+            <pattern id="pattern-hero-right" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M0 20 L20 0 L40 20 L20 40 Z" fill="none" stroke="currentColor" strokeWidth="0.5"/>
+              <path d="M10 20 L20 10 L30 20 L20 30 Z" fill="none" stroke="currentColor" strokeWidth="0.5"/>
+              <circle cx="20" cy="20" r="3" fill="currentColor" opacity="0.3"/>
             </pattern>
             <rect width="200" height="200" fill="url(#pattern-hero-right)" />
           </svg>
         </div>
 
-        {/* Golden geometric pattern - top left */}
-        <div className="absolute top-32 left-0 w-80 h-80 opacity-15 z-0">
+        {/* Additional arabesque pattern - top right */}
+        <div className="absolute top-40 right-20 w-64 h-64 opacity-10 z-0">
           <svg viewBox="0 0 200 200" className="w-full h-full text-[#CBA135]">
-            <pattern id="pattern-hero-left" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
-              <circle cx="15" cy="15" r="12" fill="none" stroke="currentColor" strokeWidth="0.5"/>
-              <circle cx="15" cy="15" r="8" fill="none" stroke="currentColor" strokeWidth="0.5"/>
-              <circle cx="15" cy="15" r="4" fill="none" stroke="currentColor" strokeWidth="0.5"/>
+            <pattern id="pattern-hero-top-right" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
+              <path d="M25 0 Q35 10 25 25 Q15 35 0 25 Q10 15 25 0 Z" fill="none" stroke="currentColor" strokeWidth="0.4"/>
+              <path d="M50 25 Q40 35 25 25 Q15 15 25 0 Q35 10 50 25 Z" fill="none" stroke="currentColor" strokeWidth="0.4"/>
             </pattern>
-            <rect width="200" height="200" fill="url(#pattern-hero-left)" />
-          </svg>
-        </div>
-
-        {/* Golden geometric pattern - bottom right */}
-        <div className="absolute bottom-32 right-0 w-80 h-80 opacity-15 z-0">
-          <svg viewBox="0 0 200 200" className="w-full h-full text-[#CBA135]">
-            <pattern id="pattern-hero-right" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
-              <path d="M0 15 L15 0 L30 15 L15 30 Z" fill="none" stroke="currentColor" strokeWidth="0.5"/>
-              <path d="M7.5 15 L15 7.5 L22.5 15 L15 22.5 Z" fill="none" stroke="currentColor" strokeWidth="0.5"/>
-            </pattern>
-            <rect width="200" height="200" fill="url(#pattern-hero-right)" />
+            <rect width="200" height="200" fill="url(#pattern-hero-top-right)" />
           </svg>
         </div>
 
@@ -329,19 +319,53 @@ export default function Landing() {
           </div>
         </div>
 
-        {/* Background pattern */}
-        <div className="absolute top-0 right-0 w-48 h-48 opacity-10 z-0">
+        {/* Enhanced Arabic geometric patterns */}
+        <div className="absolute top-0 right-0 w-64 h-64 opacity-10 z-0">
           <svg viewBox="0 0 200 200" className="w-full h-full text-[#CBA135]">
-            <pattern id="pattern-services" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-              <path d="M0 10 L10 0 L20 10 L10 20 Z" fill="none" stroke="currentColor" strokeWidth="0.3"/>
+            <pattern id="pattern-services" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
+              <path d="M0 15 L15 0 L30 15 L15 30 Z" fill="none" stroke="currentColor" strokeWidth="0.4"/>
+              <path d="M7.5 15 L15 7.5 L22.5 15 L15 22.5 Z" fill="none" stroke="currentColor" strokeWidth="0.3"/>
+              <circle cx="15" cy="15" r="2" fill="currentColor" opacity="0.4"/>
             </pattern>
             <rect width="200" height="200" fill="url(#pattern-services)" />
+          </svg>
+        </div>
+
+        {/* Additional Islamic star pattern - bottom left */}
+        <div className="absolute bottom-10 left-10 w-48 h-48 opacity-10 z-0">
+          <svg viewBox="0 0 200 200" className="w-full h-full text-[#CBA135]">
+            <pattern id="pattern-services-star" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M20 5 L23 17 L35 17 L25 24 L28 36 L20 29 L12 36 L15 24 L5 17 L17 17 Z" fill="none" stroke="currentColor" strokeWidth="0.4"/>
+            </pattern>
+            <rect width="200" height="200" fill="url(#pattern-services-star)" />
           </svg>
         </div>
       </section>
 
       {/* About Us Section */}
-      <section id="about" className="py-32 bg-white relative">
+      <section id="about" className="py-32 bg-white relative overflow-hidden">
+        {/* Arabic calligraphy-inspired pattern - left side */}
+        <div className="absolute top-20 left-0 w-72 h-72 opacity-10 z-0">
+          <svg viewBox="0 0 200 200" className="w-full h-full text-[#CBA135]">
+            <pattern id="pattern-about-left" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
+              <path d="M10 25 Q15 15 25 15 Q35 15 40 25 Q35 35 25 35 Q15 35 10 25" fill="none" stroke="currentColor" strokeWidth="0.5"/>
+              <circle cx="25" cy="25" r="8" fill="none" stroke="currentColor" strokeWidth="0.3"/>
+            </pattern>
+            <rect width="200" height="200" fill="url(#pattern-about-left)" />
+          </svg>
+        </div>
+
+        {/* Moroccan tile pattern - right side */}
+        <div className="absolute bottom-20 right-0 w-72 h-72 opacity-10 z-0">
+          <svg viewBox="0 0 200 200" className="w-full h-full text-[#CBA135]">
+            <pattern id="pattern-about-right" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M20 0 L30 10 L20 20 L10 10 Z" fill="none" stroke="currentColor" strokeWidth="0.4"/>
+              <path d="M0 20 L10 30 L20 20 L10 10 Z" fill="none" stroke="currentColor" strokeWidth="0.4"/>
+              <circle cx="20" cy="20" r="5" fill="none" stroke="currentColor" strokeWidth="0.3"/>
+            </pattern>
+            <rect width="200" height="200" fill="url(#pattern-about-right)" />
+          </svg>
+        </div>
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -424,7 +448,35 @@ export default function Landing() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-32 bg-[#F5F5F5] relative">
+      <section id="contact" className="py-32 bg-[#F5F5F5] relative overflow-hidden">
+        {/* Islamic geometric border pattern - top */}
+        <div className="absolute top-0 left-0 right-0 h-2 opacity-30 z-0">
+          <svg viewBox="0 0 1200 20" className="w-full h-full" preserveAspectRatio="none">
+            <pattern id="pattern-contact-border" x="0" y="0" width="40" height="20" patternUnits="userSpaceOnUse">
+              <path d="M0 10 L10 0 L20 10 L30 0 L40 10" fill="none" stroke="#CBA135" strokeWidth="1.5"/>
+              <path d="M0 10 L10 20 L20 10 L30 20 L40 10" fill="none" stroke="#CBA135" strokeWidth="1.5"/>
+            </pattern>
+            <rect width="1200" height="20" fill="url(#pattern-contact-border)" />
+          </svg>
+        </div>
+
+        {/* Arabesque corner ornament - top left */}
+        <div className="absolute top-10 left-10 w-40 h-40 opacity-15 z-0">
+          <svg viewBox="0 0 100 100" className="w-full h-full text-[#CBA135]">
+            <path d="M50 10 Q60 20 50 30 Q40 40 30 30 Q20 20 30 10 Q40 0 50 10" fill="none" stroke="currentColor" strokeWidth="0.5"/>
+            <path d="M50 30 Q55 35 50 40 Q45 45 40 40 Q35 35 40 30 Q45 25 50 30" fill="none" stroke="currentColor" strokeWidth="0.5"/>
+            <circle cx="50" cy="30" r="15" fill="none" stroke="currentColor" strokeWidth="0.3" opacity="0.5"/>
+          </svg>
+        </div>
+
+        {/* Arabesque corner ornament - bottom right */}
+        <div className="absolute bottom-10 right-10 w-40 h-40 opacity-15 z-0">
+          <svg viewBox="0 0 100 100" className="w-full h-full text-[#CBA135]">
+            <path d="M50 90 Q60 80 50 70 Q40 60 30 70 Q20 80 30 90 Q40 100 50 90" fill="none" stroke="currentColor" strokeWidth="0.5"/>
+            <path d="M50 70 Q55 65 50 60 Q45 55 40 60 Q35 65 40 70 Q45 75 50 70" fill="none" stroke="currentColor" strokeWidth="0.5"/>
+            <circle cx="50" cy="70" r="15" fill="none" stroke="currentColor" strokeWidth="0.3" opacity="0.5"/>
+          </svg>
+        </div>
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
