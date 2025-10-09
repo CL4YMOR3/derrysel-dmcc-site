@@ -101,12 +101,12 @@ export default function Landing() {
               <img
                 src="https://harmless-tapir-303.convex.cloud/api/storage/01e4b1b7-a536-41e4-9744-6b6e343f54bc"
                 alt="Derrysel DMCC Logo"
-                className="h-12 w-auto"
+                className="h-8 sm:h-10 md:h-12 w-auto"
               />
-              <div className="text-xl font-serif tracking-wide" style={{ fontFamily: "'Playfair Display', serif" }}>
+              <div className="text-base sm:text-lg md:text-xl font-serif tracking-wide" style={{ fontFamily: "'Playfair Display', serif" }}>
                 <span className="text-[#1A1A1A]">DERRYSEL</span>
                 <br />
-                <span className="text-[#D4AF37] text-sm">DMCC</span>
+                <span className="text-[#D4AF37] text-xs sm:text-sm">DMCC</span>
               </div>
             </motion.div>
             
