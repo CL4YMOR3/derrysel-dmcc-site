@@ -130,7 +130,7 @@ export default function Landing() {
 
       {/* Hero Section */}
       <section ref={heroRef} id="home" className="relative min-h-screen flex items-center pt-24 bg-white overflow-hidden" style={{
-        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0 L35 15 L50 15 L38 24 L43 39 L30 30 L17 39 L22 24 L10 15 L25 15 Z' fill='none' stroke='%23CBA135' stroke-width='0.3' opacity='0.08'/%3E%3C/svg%3E")`,
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0 L35 15 L50 15 L38 24 L43 39 L30 30 L17 39 L22 24 L10 15 L25 15 Z' fill='none' stroke='%23CBA135' stroke-width='0.5' opacity='0.12'/%3E%3C/svg%3E")`,
         backgroundSize: '60px 60px'
       }}>
         {/* Enhanced Arabic geometric pattern - top left */}
@@ -301,7 +301,7 @@ export default function Landing() {
 
       {/* Services Section */}
       <section ref={servicesRef} id="services" className="py-32 bg-[#F5F5F5] relative" style={{
-        backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 20 L20 0 L40 20 L20 40 Z' fill='none' stroke='%23CBA135' stroke-width='0.3' opacity='0.1'/%3E%3Ccircle cx='20' cy='20' r='8' fill='none' stroke='%23CBA135' stroke-width='0.2' opacity='0.08'/%3E%3C/svg%3E")`,
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 20 L20 0 L40 20 L20 40 Z' fill='none' stroke='%23CBA135' stroke-width='0.5' opacity='0.15'/%3E%3Ccircle cx='20' cy='20' r='8' fill='none' stroke='%23CBA135' stroke-width='0.4' opacity='0.12'/%3E%3C/svg%3E")`,
         backgroundSize: '40px 40px'
       }}>
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
@@ -396,7 +396,7 @@ export default function Landing() {
 
       {/* About Us Section */}
       <section ref={aboutRef} id="about" className="py-32 bg-white relative overflow-hidden" style={{
-        backgroundImage: `url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 25 Q15 15 25 15 Q35 15 40 25 Q35 35 25 35 Q15 35 10 25' fill='none' stroke='%23CBA135' stroke-width='0.3' opacity='0.08'/%3E%3Ccircle cx='25' cy='25' r='12' fill='none' stroke='%23CBA135' stroke-width='0.2' opacity='0.06'/%3E%3C/svg%3E")`,
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 25 Q15 15 25 15 Q35 15 40 25 Q35 35 25 35 Q15 35 10 25' fill='none' stroke='%23CBA135' stroke-width='0.5' opacity='0.12'/%3E%3Ccircle cx='25' cy='25' r='12' fill='none' stroke='%23CBA135' stroke-width='0.4' opacity='0.10'/%3E%3C/svg%3E")`,
         backgroundSize: '50px 50px'
       }}>
         {/* Arabic calligraphy-inspired pattern - left side */}
@@ -510,7 +510,7 @@ export default function Landing() {
 
       {/* Contact Section */}
       <section ref={contactRef} id="contact" className="py-32 bg-[#F5F5F5] relative overflow-hidden" style={{
-        backgroundImage: `url("data:image/svg+xml,%3Csvg width='45' height='45' viewBox='0 0 45 45' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M22.5 5 L27.5 17.5 L40 17.5 L30 25 L35 37.5 L22.5 30 L10 37.5 L15 25 L5 17.5 L17.5 17.5 Z' fill='none' stroke='%23CBA135' stroke-width='0.3' opacity='0.1'/%3E%3C/svg%3E")`,
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='45' height='45' viewBox='0 0 45 45' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M22.5 5 L27.5 17.5 L40 17.5 L30 25 L35 37.5 L22.5 30 L10 37.5 L15 25 L5 17.5 L17.5 17.5 Z' fill='none' stroke='%23CBA135' stroke-width='0.5' opacity='0.15'/%3E%3C/svg%3E")`,
         backgroundSize: '45px 45px'
       }}>
         {/* Islamic geometric border pattern - top */}
