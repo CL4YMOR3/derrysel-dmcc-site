@@ -164,7 +164,7 @@ export default function Landing() {
                 </h1>
                 <div className="w-24 h-1 bg-gradient-to-r from-[#F4D03F] to-[#D4AF37]"></div>
                 <p
-                  className="text-xl lg:text-2xl text-gray-600 leading-relaxed"
+                  className="text-xl lg:text-2xl text-gray-600 leading-relaxed tracking-wide"
                   style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 300 }}
                 >
                   Cultivating Excellence Through Strategic Vision
@@ -222,7 +222,7 @@ export default function Landing() {
               Our Expertise
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-[#F4D03F] to-[#D4AF37] mx-auto mb-6"></div>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto" style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 300 }}>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed" style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 300 }}>
               Comprehensive consultancy solutions designed to help your business grow, innovate, and thrive.
             </p>
           </motion.div>
@@ -289,7 +289,7 @@ export default function Landing() {
               Get in Touch
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-[#F4D03F] to-[#D4AF37] mx-auto mb-6"></div>
-            <p className="text-lg text-gray-600" style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 300 }}>
+            <p className="text-lg text-gray-600 leading-relaxed" style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 300 }}>
               Let's discuss how we can help your business thrive
             </p>
           </motion.div>
@@ -371,7 +371,7 @@ export default function Landing() {
                   <MapPin className="w-5 h-5 text-[#D4AF37] flex-shrink-0 mt-1" />
                   <div>
                     <p className="text-xs font-medium text-[#1A1A1A] tracking-wide mb-1">OFFICE ADDRESS</p>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-gray-600 leading-relaxed">
                       Unit No: 262, DMCC Business Centre<br />
                       Level No. 5, Jewellery & Gemplex 2<br />
                       Dubai, United Arab Emirates
@@ -382,7 +382,7 @@ export default function Landing() {
                   <Phone className="w-5 h-5 text-[#D4AF37] flex-shrink-0 mt-1" />
                   <div>
                     <p className="text-xs font-medium text-[#1A1A1A] tracking-wide mb-1">PHONE</p>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-gray-600 leading-relaxed">
                       +971 52 118 9998<br />
                       +971 4 432 7810
                     </p>
@@ -392,7 +392,7 @@ export default function Landing() {
                   <Mail className="w-5 h-5 text-[#D4AF37] flex-shrink-0 mt-1" />
                   <div>
                     <p className="text-xs font-medium text-[#1A1A1A] tracking-wide mb-1">EMAIL</p>
-                    <p className="text-sm text-gray-600">info@derrysel.com</p>
+                    <p className="text-sm text-gray-600 leading-relaxed">info@derrysel.com</p>
                   </div>
                 </div>
               </div>
