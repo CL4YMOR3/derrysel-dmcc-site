@@ -50,13 +50,6 @@ export default function Landing() {
   });
   const servicesPatternY = useTransform(servicesScroll, [0, 1], ["-20%", "20%"]);
 
-  const aboutRef = useRef(null);
-  const { scrollYProgress: aboutScroll } = useScroll({
-    target: aboutRef,
-    offset: ["start end", "end start"]
-  });
-  const aboutPatternY = useTransform(aboutScroll, [0, 1], ["-30%", "30%"]);
-
   const contactRef = useRef(null);
   const { scrollYProgress: contactScroll } = useScroll({
     target: contactRef,
@@ -395,89 +388,6 @@ export default function Landing() {
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* About Us Section */}
-      <section ref={aboutRef} id="about" className="py-32 bg-white relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-8 lg:px-16">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mb-16"
-          >
-            <h2
-              className="text-5xl font-serif text-[#1A1A1A] mb-12"
-              style={{ fontFamily: "'Playfair Display', serif" }}
-            >
-              About Derrysel DMCC
-            </h2>
-          </motion.div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
-            {/* Left Text */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="space-y-6"
-            >
-              <p className="text-base text-gray-700 leading-relaxed" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                Derrysel DMCC is a trusted business consultancy and service provider under the Dubai Multi Commodities Centre (DMCC).
-              </p>
-              <p className="text-base text-gray-700 leading-relaxed" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                We specialize in delivering customized commercial, strategic, and research-driven solutions that help clients navigate complex markets with confidence.
-              </p>
-              <p className="text-base text-gray-700 leading-relaxed" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                Our expertise combines global insight, local market understanding, and a commitment to integrity and excellence.
-              </p>
-            </motion.div>
-
-            {/* Right Image */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="relative"
-            >
-              <img
-                src="https://harmless-tapir-303.convex.cloud/api/storage/732cc831-9363-4103-91f2-ae4573e559f3"
-                alt="Professional Office"
-                className="w-full h-auto rounded-sm"
-              />
-            </motion.div>
-          </div>
-
-          {/* Mission Statement */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-16"
-          >
-            <div className="bg-white p-8 rounded-sm">
-              <h3 className="text-2xl font-serif text-[#1A1A1A] mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
-                Mission Statement
-              </h3>
-              <p className="text-sm text-gray-700 leading-relaxed" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                To empower businesses with actionable intelligence, strategic clarity, and measurable growth.
-              </p>
-            </div>
-            
-            <div className="bg-white p-8 rounded-sm">
-              <h3 className="text-2xl font-serif text-[#1A1A1A] mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
-                Our Vision
-              </h3>
-              <p className="text-sm text-gray-700 leading-relaxed" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                To be the preferred consultancy partner for innovation-led, sustainable business success across industries.
-              </p>
-            </div>
-          </motion.div>
         </div>
       </section>
 
