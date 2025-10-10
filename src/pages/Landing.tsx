@@ -210,7 +210,7 @@ export default function Landing() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
             <h2
               className="text-5xl lg:text-6xl font-serif text-[#1A1A1A] mb-6"
@@ -218,12 +218,13 @@ export default function Landing() {
             >
               Our Expertise
             </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-[#F4D03F] to-[#D4AF37] mx-auto mb-6"></div>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300 }}>
               Comprehensive consultancy solutions designed to help your business grow, innovate, and thrive.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
             {[
               {
                 title: "Commercial Information Services",
@@ -253,9 +254,10 @@ export default function Landing() {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.6, delay: index * 0.15, ease: "easeOut" }}
                 whileHover={{ y: -5, transition: { duration: 0.3 } }}
-                className="group"
+                className="group relative"
               >
-                <h3 className="text-xl font-serif text-[#1A1A1A] mb-4 uppercase tracking-wider" style={{ fontFamily: "'Playfair Display', serif", fontWeight: 600 }}>
+                <div className="absolute -left-4 top-0 w-1 h-0 bg-gradient-to-b from-[#F4D03F] to-[#D4AF37] group-hover:h-full transition-all duration-500 ease-out"></div>
+                <h3 className="text-xl font-serif text-[#1A1A1A] mb-4 uppercase tracking-wider group-hover:text-[#D4AF37] transition-colors duration-300" style={{ fontFamily: "'Playfair Display', serif", fontWeight: 600 }}>
                   {service.title}
                 </h3>
                 <p className="text-sm text-gray-600 leading-relaxed" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300 }}>
