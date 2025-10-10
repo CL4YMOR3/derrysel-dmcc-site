@@ -153,13 +153,17 @@ export default function Landing() {
               className="space-y-10 relative z-10"
             >
               <h1
-                className="text-6xl lg:text-7xl font-serif text-[#1A1A1A] leading-tight uppercase"
+                className="text-5xl lg:text-6xl font-serif text-[#1A1A1A] leading-tight mb-6"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
-                Luxury<br />
-                Consultancy<br />
-                Dubai
+                DERRYSEL DMCC
               </h1>
+              <p
+                className="text-xl lg:text-2xl text-gray-700 leading-relaxed mb-8"
+                style={{ fontFamily: "'Poppins', sans-serif" }}
+              >
+                Cultivating Excellence Through Strategic Vision
+              </p>
               
               <Button
                 onClick={() => scrollToSection("services")}
@@ -170,95 +174,18 @@ export default function Landing() {
               </Button>
             </motion.div>
 
-            {/* Right Image Collage */}
+            {/* Right Logo Display */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative"
+              className="flex items-center justify-center"
             >
-              <div className="grid grid-cols-2 gap-4 relative">
-                {/* Top row - 2 images */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.3 }}
-                  className="relative h-64 bg-[#F5F5F5] rounded-sm overflow-hidden"
-                >
-                  <img
-                    src="https://harmless-tapir-303.convex.cloud/api/storage/732cc831-9363-4103-91f2-ae4573e559f3"
-                    alt="Professional 1"
-                    className="w-full h-full object-cover"
-                  />
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
-                  className="relative h-64 bg-[#F5F5F5] rounded-sm overflow-hidden"
-                >
-                  <img
-                    src="https://harmless-tapir-303.convex.cloud/api/storage/732cc831-9363-4103-91f2-ae4573e559f3"
-                    alt="Professional 2"
-                    className="w-full h-full object-cover"
-                  />
-                </motion.div>
-
-                {/* Golden wave divider */}
-                <div className="col-span-2 relative h-12 -my-2">
-                  <svg viewBox="0 0 400 50" className="w-full h-full" preserveAspectRatio="none">
-                    <path
-                      d="M0 25 Q100 10, 200 25 T400 25"
-                      fill="none"
-                      stroke="#CBA135"
-                      strokeWidth="3"
-                    />
-                  </svg>
-                </div>
-
-                {/* Bottom row - 2 cards */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.5 }}
-                  className="relative bg-white border border-gray-200 rounded-sm p-6 shadow-sm"
-                >
-                  <h3 className="text-sm font-serif text-[#1A1A1A] mb-2 uppercase tracking-wide" style={{ fontFamily: "'Playfair Display', serif" }}>
-                    SESCT MONTS<br />DUBEN
-                  </h3>
-                  <p className="text-xs text-gray-600 leading-relaxed mb-4">
-                    Comprehensive business solutions for growth and innovation.
-                  </p>
-                  <Button
-                    size="sm"
-                    className="bg-gradient-to-r from-[#F4D03F] to-[#D4AF37] hover:from-[#E5C130] hover:to-[#C5A028] text-white text-xs px-4 py-2 rounded-full cursor-pointer uppercase tracking-wide transition-all duration-300"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
-                  >
-                    Explore
-                  </Button>
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.6 }}
-                  className="relative bg-white border border-gray-200 rounded-sm p-6 shadow-sm"
-                >
-                  <h3 className="text-sm font-serif text-[#1A1A1A] mb-2 uppercase tracking-wide" style={{ fontFamily: "'Playfair Display', serif" }}>
-                    SESUT MONTS<br />DUBLN
-                  </h3>
-                  <p className="text-xs text-gray-600 leading-relaxed mb-4">
-                    Strategic consultancy for sustainable success.
-                  </p>
-                  <Button
-                    size="sm"
-                    className="bg-gradient-to-r from-[#F4D03F] to-[#D4AF37] hover:from-[#E5C130] hover:to-[#C5A028] text-white text-xs px-4 py-2 rounded-full cursor-pointer uppercase tracking-wide transition-all duration-300"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
-                  >
-                    Contact
-                  </Button>
-                </motion.div>
-              </div>
+              <img
+                src="https://harmless-tapir-303.convex.cloud/api/storage/3758d696-d7aa-4293-b003-d9ad9dc08b13"
+                alt="Derrysel DMCC Logo"
+                className="w-full max-w-md h-auto"
+              />
             </motion.div>
           </div>
         </div>
