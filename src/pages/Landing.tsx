@@ -170,7 +170,7 @@ export default function Landing() {
                 className="bg-gradient-to-r from-[#F4D03F] to-[#D4AF37] hover:from-[#E5C130] hover:to-[#C5A028] text-white px-10 py-6 text-sm tracking-widest cursor-pointer rounded-full uppercase font-medium transition-all duration-300"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
-                Concept
+                Explore
               </Button>
             </motion.div>
 
