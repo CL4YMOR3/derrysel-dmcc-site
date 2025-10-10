@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { useRef } from "react";
 import { 
   Briefcase, 
@@ -64,6 +64,7 @@ export default function Landing() {
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
         className={`fixed top-0 w-full z-50 transition-all duration-300 ${
           isScrolled ? "bg-white shadow-sm" : "bg-white"
         }`}
@@ -71,8 +72,9 @@ export default function Landing() {
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
           <div className="flex justify-between items-center h-24">
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               className="flex items-center gap-3"
             >
               <img
@@ -97,7 +99,8 @@ export default function Landing() {
                   key={item.label}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
+                  transition={{ delay: 0.3 + index * 0.1, duration: 0.5 }}
+                  whileHover={{ scale: 1.05 }}
                   onClick={() => scrollToSection(item.id)}
                   className="text-xs font-medium tracking-widest text-[#1A1A1A] hover:text-[#D4AF37] transition-colors"
                   style={{ fontFamily: "'Poppins', sans-serif" }}
@@ -147,9 +150,9 @@ export default function Landing() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             {/* Left Content */}
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
+              initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
               className="space-y-10 relative z-10"
             >
               <h1
@@ -165,20 +168,28 @@ export default function Landing() {
                 Cultivating Excellence Through Strategic Vision
               </p>
               
-              <Button
-                onClick={() => scrollToSection("services")}
-                className="bg-gradient-to-r from-[#F4D03F] to-[#D4AF37] hover:from-[#E5C130] hover:to-[#C5A028] text-white px-10 py-6 text-sm tracking-widest cursor-pointer rounded-full uppercase font-medium transition-all duration-300"
-                style={{ fontFamily: "'Playfair Display', serif" }}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                Explore
-              </Button>
+                <Button
+                  onClick={() => scrollToSection("services")}
+                  className="bg-gradient-to-r from-[#F4D03F] to-[#D4AF37] hover:from-[#E5C130] hover:to-[#C5A028] text-white px-10 py-6 text-sm tracking-widest cursor-pointer rounded-full uppercase font-medium transition-all duration-300"
+                  style={{ fontFamily: "'Playfair Display', serif" }}
+                >
+                  Explore
+                </Button>
+              </motion.div>
             </motion.div>
 
             {/* Right Logo Display */}
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
               className="flex items-center justify-center"
             >
               <img
@@ -195,10 +206,10 @@ export default function Landing() {
       <section ref={servicesRef} id="services" className="py-32 bg-[#F5F5F5] relative">
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
             className="text-center mb-16"
           >
             <h2
@@ -237,10 +248,11 @@ export default function Landing() {
             ].map((service, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6, delay: index * 0.15, ease: "easeOut" }}
+                whileHover={{ y: -5, transition: { duration: 0.3 } }}
                 className="group"
               >
                 <h3 className="text-xl font-serif text-[#1A1A1A] mb-3 uppercase tracking-wide" style={{ fontFamily: "'Playfair Display', serif" }}>
@@ -259,10 +271,10 @@ export default function Landing() {
       <section ref={contactRef} id="contact" className="py-32 bg-[#F5F5F5] relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
             className="text-center mb-16"
           >
             <h2
@@ -278,10 +290,10 @@ export default function Landing() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
+              initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
             >
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
@@ -326,21 +338,26 @@ export default function Landing() {
                     className="w-full"
                   />
                 </div>
-                <Button
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-[#F4D03F] to-[#D4AF37] hover:from-[#E5C130] hover:to-[#C5A028] text-white py-6 text-sm tracking-wide cursor-pointer transition-all duration-300"
-                  style={{ fontFamily: "'Playfair Display', serif" }}
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                 >
-                  SEND MESSAGE
-                </Button>
+                  <Button
+                    type="submit"
+                    className="w-full bg-gradient-to-r from-[#F4D03F] to-[#D4AF37] hover:from-[#E5C130] hover:to-[#C5A028] text-white py-6 text-sm tracking-wide cursor-pointer transition-all duration-300"
+                    style={{ fontFamily: "'Playfair Display', serif" }}
+                  >
+                    SEND MESSAGE
+                  </Button>
+                </motion.div>
               </form>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
+              initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
               className="space-y-8"
             >
               <div className="space-y-6">
@@ -369,7 +386,7 @@ export default function Landing() {
                   <Mail className="w-5 h-5 text-[#D4AF37] flex-shrink-0 mt-1" />
                   <div>
                     <p className="text-xs font-medium text-[#1A1A1A] tracking-wide mb-1">EMAIL</p>
-                    <p className="text-sm text-gray-600">derrysel@gmail.com</p>
+                    <p className="text-sm text-gray-600">info@derrysel.com</p>
                   </div>
                 </div>
               </div>
