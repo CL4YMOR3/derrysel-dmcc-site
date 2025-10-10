@@ -195,11 +195,18 @@ export default function Landing() {
               transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
               className="flex items-center justify-center"
             >
-              <img
-                src="https://harmless-tapir-303.convex.cloud/api/storage/3758d696-d7aa-4293-b003-d9ad9dc08b13"
-                alt="Derrysel DMCC Logo"
-                className="w-full max-w-md h-auto"
-              />
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                className="relative"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-[#F4D03F]/10 to-[#D4AF37]/10 rounded-2xl blur-2xl"></div>
+                <img
+                  src="https://harmless-tapir-303.convex.cloud/api/storage/3758d696-d7aa-4293-b003-d9ad9dc08b13"
+                  alt="Derrysel DMCC Logo"
+                  className="relative w-full max-w-md h-auto drop-shadow-2xl"
+                />
+              </motion.div>
             </motion.div>
           </div>
         </div>
