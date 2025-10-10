@@ -116,7 +116,6 @@ export default function Landing() {
               {[
                 { label: "HOME", id: "home" },
                 { label: "SERVICES", id: "services" },
-                { label: "ABOUT", id: "about" },
                 { label: "CONTACT", id: "contact" }
               ].map((item, index) => (
                 <motion.button
@@ -145,7 +144,6 @@ export default function Landing() {
                   {[
                     { label: "HOME", id: "home" },
                     { label: "SERVICES", id: "services" },
-                    { label: "ABOUT", id: "about" },
                     { label: "CONTACT", id: "contact" }
                   ].map((item) => (
                     <button
