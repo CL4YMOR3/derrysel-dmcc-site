@@ -446,26 +446,6 @@ export default function Landing() {
                   </div>
                 </div>
               </div>
-
-              <div className="pt-8 border-t border-gray-200">
-                <p className="text-xs font-medium text-[#1A1A1A] mb-4 tracking-wide">FOLLOW US</p>
-                <div className="flex space-x-4">
-                  <a
-                    href="https://linkedin.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 bg-gradient-to-r from-[#F4D03F] to-[#D4AF37] hover:from-[#E5C130] hover:to-[#C5A028] flex items-center justify-center transition-all duration-300 cursor-pointer rounded-sm"
-                  >
-                    <Linkedin className="w-5 h-5 text-white" />
-                  </a>
-                  <a
-                    href="mailto:derrysel@gmail.com"
-                    className="w-10 h-10 bg-gradient-to-r from-[#F4D03F] to-[#D4AF37] hover:from-[#E5C130] hover:to-[#C5A028] flex items-center justify-center transition-all duration-300 cursor-pointer rounded-sm"
-                  >
-                    <Mail className="w-5 h-5 text-white" />
-                  </a>
-                </div>
-              </div>
             </motion.div>
           </div>
         </div>
