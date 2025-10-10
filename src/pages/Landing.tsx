@@ -175,12 +175,12 @@ export default function Landing() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
                 whileTap={{ scale: 0.95 }}
               >
                 <Button
                   onClick={() => scrollToSection("services")}
-                  className="bg-gradient-to-r from-[#F4D03F] to-[#D4AF37] hover:from-[#E5C130] hover:to-[#C5A028] text-white px-12 py-7 text-sm tracking-widest cursor-pointer rounded-full uppercase font-medium transition-all duration-300 shadow-lg hover:shadow-xl"
+                  className="bg-gradient-to-r from-[#F4D03F] to-[#D4AF37] hover:from-[#E5C130] hover:to-[#C5A028] text-white px-12 py-7 text-sm tracking-widest cursor-pointer rounded-full uppercase font-medium transition-all duration-200 shadow-lg hover:shadow-xl"
                   style={{ fontFamily: "'Playfair Display', serif", fontWeight: 600 }}
                 >
                   Explore
