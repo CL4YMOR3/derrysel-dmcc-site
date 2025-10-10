@@ -277,7 +277,7 @@ export default function Landing() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
             <h2
               className="text-5xl lg:text-6xl font-serif text-[#1A1A1A] mb-6"
@@ -285,12 +285,13 @@ export default function Landing() {
             >
               Get in Touch
             </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-[#F4D03F] to-[#D4AF37] mx-auto mb-6"></div>
             <p className="text-lg text-gray-600" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300 }}>
               Let's discuss how we can help your business thrive
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
