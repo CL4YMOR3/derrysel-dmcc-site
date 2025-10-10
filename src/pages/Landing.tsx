@@ -34,28 +34,10 @@ export default function Landing() {
     message: ""
   });
 
-  // Parallax scroll refs and transforms
+  // Section refs for smooth scrolling
   const heroRef = useRef(null);
-  const { scrollYProgress: heroScroll } = useScroll({
-    target: heroRef,
-    offset: ["start start", "end start"]
-  });
-  const heroPatternY = useTransform(heroScroll, [0, 1], ["0%", "50%"]);
-  const heroPatternRotate = useTransform(heroScroll, [0, 1], [0, 15]);
-
   const servicesRef = useRef(null);
-  const { scrollYProgress: servicesScroll } = useScroll({
-    target: servicesRef,
-    offset: ["start end", "end start"]
-  });
-  const servicesPatternY = useTransform(servicesScroll, [0, 1], ["-20%", "20%"]);
-
   const contactRef = useRef(null);
-  const { scrollYProgress: contactScroll } = useScroll({
-    target: contactRef,
-    offset: ["start end", "end start"]
-  });
-  const contactPatternY = useTransform(contactScroll, [0, 1], ["-25%", "25%"]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -161,51 +143,6 @@ export default function Landing() {
 
       {/* Hero Section */}
       <section ref={heroRef} id="home" className="relative min-h-screen flex items-center pt-24 bg-white overflow-hidden">
-        {/* Enhanced Arabic geometric pattern - top left */}
-        <motion.div 
-          className="absolute top-20 left-0 w-96 h-96 opacity-15 z-0"
-          style={{ y: heroPatternY, rotate: heroPatternRotate }}
-        >
-          <svg viewBox="0 0 200 200" className="w-full h-full text-[#CBA135]">
-            <pattern id="pattern-hero-left" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-              <circle cx="20" cy="20" r="15" fill="none" stroke="currentColor" strokeWidth="0.5"/>
-              <circle cx="20" cy="20" r="10" fill="none" stroke="currentColor" strokeWidth="0.5"/>
-              <circle cx="20" cy="20" r="5" fill="none" stroke="currentColor" strokeWidth="0.5"/>
-              <path d="M20 5 L20 35 M5 20 L35 20" stroke="currentColor" strokeWidth="0.3" opacity="0.5"/>
-            </pattern>
-            <rect width="200" height="200" fill="url(#pattern-hero-left)" />
-          </svg>
-        </motion.div>
-
-        {/* Enhanced Arabic geometric pattern - bottom right */}
-        <motion.div 
-          className="absolute bottom-20 right-0 w-96 h-96 opacity-15 z-0"
-          style={{ y: heroPatternY }}
-        >
-          <svg viewBox="0 0 200 200" className="w-full h-full text-[#CBA135]">
-            <pattern id="pattern-hero-right" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M0 20 L20 0 L40 20 L20 40 Z" fill="none" stroke="currentColor" strokeWidth="0.5"/>
-              <path d="M10 20 L20 10 L30 20 L20 30 Z" fill="none" stroke="currentColor" strokeWidth="0.5"/>
-              <circle cx="20" cy="20" r="3" fill="currentColor" opacity="0.3"/>
-            </pattern>
-            <rect width="200" height="200" fill="url(#pattern-hero-right)" />
-          </svg>
-        </motion.div>
-
-        {/* Additional arabesque pattern - top right */}
-        <motion.div 
-          className="absolute top-40 right-20 w-64 h-64 opacity-10 z-0"
-          style={{ y: heroPatternY }}
-        >
-          <svg viewBox="0 0 200 200" className="w-full h-full text-[#CBA135]">
-            <pattern id="pattern-hero-top-right" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
-              <path d="M25 0 Q35 10 25 25 Q15 35 0 25 Q10 15 25 0 Z" fill="none" stroke="currentColor" strokeWidth="0.4"/>
-              <path d="M50 25 Q40 35 25 25 Q15 15 25 0 Q35 10 50 25 Z" fill="none" stroke="currentColor" strokeWidth="0.4"/>
-            </pattern>
-            <rect width="200" height="200" fill="url(#pattern-hero-top-right)" />
-          </svg>
-        </motion.div>
-
         <div className="max-w-7xl mx-auto px-8 lg:px-16 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             {/* Left Content */}
