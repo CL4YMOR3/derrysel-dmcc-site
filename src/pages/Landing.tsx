@@ -156,14 +156,14 @@ export default function Landing() {
               className="space-y-10 relative z-10"
             >
               <h1
-                className="text-5xl lg:text-6xl font-serif text-[#1A1A1A] leading-tight mb-6"
-                style={{ fontFamily: "'Playfair Display', serif" }}
+                className="text-5xl lg:text-7xl font-serif text-[#1A1A1A] leading-tight mb-8"
+                style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700 }}
               >
                 DERRYSEL DMCC
               </h1>
               <p
-                className="text-xl lg:text-2xl text-gray-700 leading-relaxed mb-8"
-                style={{ fontFamily: "'Poppins', sans-serif" }}
+                className="text-xl lg:text-2xl text-gray-600 leading-relaxed mb-10"
+                style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300 }}
               >
                 Cultivating Excellence Through Strategic Vision
               </p>
@@ -177,8 +177,8 @@ export default function Landing() {
               >
                 <Button
                   onClick={() => scrollToSection("services")}
-                  className="bg-gradient-to-r from-[#F4D03F] to-[#D4AF37] hover:from-[#E5C130] hover:to-[#C5A028] text-white px-10 py-6 text-sm tracking-widest cursor-pointer rounded-full uppercase font-medium transition-all duration-300"
-                  style={{ fontFamily: "'Playfair Display', serif" }}
+                  className="bg-gradient-to-r from-[#F4D03F] to-[#D4AF37] hover:from-[#E5C130] hover:to-[#C5A028] text-white px-12 py-7 text-sm tracking-widest cursor-pointer rounded-full uppercase font-medium transition-all duration-300 shadow-lg hover:shadow-xl"
+                  style={{ fontFamily: "'Playfair Display', serif", fontWeight: 600 }}
                 >
                   Explore
                 </Button>
@@ -213,12 +213,12 @@ export default function Landing() {
             className="text-center mb-16"
           >
             <h2
-              className="text-5xl font-serif text-[#1A1A1A] mb-4"
-              style={{ fontFamily: "'Playfair Display', serif" }}
+              className="text-5xl lg:text-6xl font-serif text-[#1A1A1A] mb-6"
+              style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700 }}
             >
               Our Expertise
             </h2>
-            <p className="text-base text-gray-600 max-w-3xl mx-auto" style={{ fontFamily: "'Poppins', sans-serif" }}>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300 }}>
               Comprehensive consultancy solutions designed to help your business grow, innovate, and thrive.
             </p>
           </motion.div>
@@ -255,10 +255,10 @@ export default function Landing() {
                 whileHover={{ y: -5, transition: { duration: 0.3 } }}
                 className="group"
               >
-                <h3 className="text-xl font-serif text-[#1A1A1A] mb-3 uppercase tracking-wide" style={{ fontFamily: "'Playfair Display', serif" }}>
+                <h3 className="text-xl font-serif text-[#1A1A1A] mb-4 uppercase tracking-wider" style={{ fontFamily: "'Playfair Display', serif", fontWeight: 600 }}>
                   {service.title}
                 </h3>
-                <p className="text-sm text-gray-600 leading-relaxed" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                <p className="text-sm text-gray-600 leading-relaxed" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300 }}>
                   {service.description}
                 </p>
               </motion.div>
@@ -278,12 +278,12 @@ export default function Landing() {
             className="text-center mb-16"
           >
             <h2
-              className="text-5xl font-serif text-[#1A1A1A] mb-4"
-              style={{ fontFamily: "'Playfair Display', serif" }}
+              className="text-5xl lg:text-6xl font-serif text-[#1A1A1A] mb-6"
+              style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700 }}
             >
               Get in Touch
             </h2>
-            <p className="text-base text-gray-600" style={{ fontFamily: "'Poppins', sans-serif" }}>
+            <p className="text-lg text-gray-600" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300 }}>
               Let's discuss how we can help your business thrive
             </p>
           </motion.div>
@@ -344,8 +344,8 @@ export default function Landing() {
                 >
                   <Button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-[#F4D03F] to-[#D4AF37] hover:from-[#E5C130] hover:to-[#C5A028] text-white py-6 text-sm tracking-wide cursor-pointer transition-all duration-300"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
+                    className="w-full bg-gradient-to-r from-[#F4D03F] to-[#D4AF37] hover:from-[#E5C130] hover:to-[#C5A028] text-white py-6 text-sm tracking-widest cursor-pointer transition-all duration-300 shadow-md hover:shadow-lg"
+                    style={{ fontFamily: "'Playfair Display', serif", fontWeight: 600 }}
                   >
                     SEND MESSAGE
                   </Button>
