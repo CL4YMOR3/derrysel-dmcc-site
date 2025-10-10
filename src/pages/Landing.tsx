@@ -422,8 +422,9 @@ export default function Landing() {
                   <div>
                     <p className="text-xs font-medium text-[#1A1A1A] tracking-wide mb-1">OFFICE ADDRESS</p>
                     <p className="text-sm text-gray-600">
-                      Office 2104, Jumeirah Lakes Towers<br />
-                      Dubai, UAE
+                      Unit No: 262, DMCC Business Centre<br />
+                      Level No. 5, Jewellery & Gemplex 2<br />
+                      Dubai, United Arab Emirates
                     </p>
                   </div>
                 </div>
@@ -431,14 +432,17 @@ export default function Landing() {
                   <Phone className="w-5 h-5 text-[#D4AF37] flex-shrink-0 mt-1" />
                   <div>
                     <p className="text-xs font-medium text-[#1A1A1A] tracking-wide mb-1">PHONE</p>
-                    <p className="text-sm text-gray-600">+971 4 123 4567</p>
+                    <p className="text-sm text-gray-600">
+                      +971 52 118 9998<br />
+                      +971 4 432 7810
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
                   <Mail className="w-5 h-5 text-[#D4AF37] flex-shrink-0 mt-1" />
                   <div>
                     <p className="text-xs font-medium text-[#1A1A1A] tracking-wide mb-1">EMAIL</p>
-                    <p className="text-sm text-gray-600">info@derrysell.com</p>
+                    <p className="text-sm text-gray-600">derrysel@gmail.com</p>
                   </div>
                 </div>
               </div>
@@ -455,7 +459,7 @@ export default function Landing() {
                     <Linkedin className="w-5 h-5 text-white" />
                   </a>
                   <a
-                    href="mailto:info@derrysell.com"
+                    href="mailto:derrysel@gmail.com"
                     className="w-10 h-10 bg-gradient-to-r from-[#F4D03F] to-[#D4AF37] hover:from-[#E5C130] hover:to-[#C5A028] flex items-center justify-center transition-all duration-300 cursor-pointer rounded-sm"
                   >
                     <Mail className="w-5 h-5 text-white" />
@@ -470,8 +474,11 @@ export default function Landing() {
       {/* Footer */}
       <footer className="bg-white py-8 border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
-          <div className="text-center text-xs text-gray-600 tracking-wide">
+          <div className="text-center text-xs text-gray-600 tracking-wide space-y-2">
             <p style={{ fontFamily: "'Poppins', sans-serif" }}>&copy; {new Date().getFullYear()} DERRYSEL DMCC. ALL RIGHTS RESERVED.</p>
+            <p style={{ fontFamily: "'Poppins', sans-serif" }}>
+              The Company is registered and licensed as a FREEZONE Company under the Rules & Regulations of DMCCA.
+            </p>
           </div>
         </div>
       </footer>
