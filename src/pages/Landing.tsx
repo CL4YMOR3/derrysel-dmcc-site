@@ -82,7 +82,7 @@ export default function Landing() {
                 alt="Derrysel DMCC Logo"
                 className="h-8 sm:h-10 md:h-12 w-auto"
               />
-              <div className="text-base sm:text-lg md:text-xl font-serif tracking-wide" style={{ fontFamily: "'Playfair Display', serif" }}>
+              <div className="text-base sm:text-lg md:text-xl font-serif tracking-wide" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                 <span className="text-[#1A1A1A]">DERRYSEL</span>
                 <br />
                 <span className="text-[#D4AF37] text-xs sm:text-sm">DMCC</span>
@@ -103,7 +103,7 @@ export default function Landing() {
                   whileHover={{ scale: 1.05 }}
                   onClick={() => scrollToSection(item.id)}
                   className="text-xs font-medium tracking-widest text-[#1A1A1A] hover:text-[#D4AF37] transition-colors"
-                  style={{ fontFamily: "'Poppins', sans-serif" }}
+                  style={{ fontFamily: "'Montserrat', sans-serif" }}
                 >
                   {item.label}
                 </motion.button>
@@ -132,7 +132,7 @@ export default function Landing() {
                         document.querySelector('[data-slot="sheet-close"]')?.dispatchEvent(new Event('click', { bubbles: true }));
                       }}
                       className="text-left text-sm font-medium tracking-widest text-[#1A1A1A] hover:text-[#D4AF37] transition-colors"
-                      style={{ fontFamily: "'Poppins', sans-serif" }}
+                      style={{ fontFamily: "'Montserrat', sans-serif" }}
                     >
                       {item.label}
                     </button>
@@ -158,14 +158,14 @@ export default function Landing() {
               <div className="space-y-8">
                 <h1
                   className="text-5xl lg:text-7xl font-serif text-[#1A1A1A] leading-tight"
-                  style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700 }}
+                  style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700 }}
                 >
                   DERRYSEL DMCC
                 </h1>
                 <div className="w-24 h-1 bg-gradient-to-r from-[#F4D03F] to-[#D4AF37]"></div>
                 <p
                   className="text-xl lg:text-2xl text-gray-600 leading-relaxed"
-                  style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300 }}
+                  style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 300 }}
                 >
                   Cultivating Excellence Through Strategic Vision
                 </p>
@@ -181,7 +181,7 @@ export default function Landing() {
                 <Button
                   onClick={() => scrollToSection("services")}
                   className="bg-gradient-to-r from-[#F4D03F] to-[#D4AF37] hover:from-[#E5C130] hover:to-[#C5A028] text-white px-12 py-7 text-sm tracking-widest cursor-pointer rounded-full uppercase font-medium transition-all duration-200 shadow-lg hover:shadow-xl"
-                  style={{ fontFamily: "'Playfair Display', serif", fontWeight: 600 }}
+                  style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600 }}
                 >
                   Explore
                 </Button>
@@ -217,12 +217,12 @@ export default function Landing() {
           >
             <h2
               className="text-5xl lg:text-6xl font-serif text-[#1A1A1A] mb-6"
-              style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700 }}
+              style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700 }}
             >
               Our Expertise
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-[#F4D03F] to-[#D4AF37] mx-auto mb-6"></div>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300 }}>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto" style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 300 }}>
               Comprehensive consultancy solutions designed to help your business grow, innovate, and thrive.
             </p>
           </motion.div>
@@ -260,10 +260,10 @@ export default function Landing() {
                 className="group relative"
               >
                 <div className="absolute -left-4 top-0 w-1 h-0 bg-gradient-to-b from-[#F4D03F] to-[#D4AF37] group-hover:h-full transition-all duration-500 ease-out"></div>
-                <h3 className="text-xl font-serif text-[#1A1A1A] mb-4 uppercase tracking-wider group-hover:text-[#D4AF37] transition-colors duration-300" style={{ fontFamily: "'Playfair Display', serif", fontWeight: 600 }}>
+                <h3 className="text-xl font-serif text-[#1A1A1A] mb-4 uppercase tracking-wider group-hover:text-[#D4AF37] transition-colors duration-300" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600 }}>
                   {service.title}
                 </h3>
-                <p className="text-sm text-gray-600 leading-relaxed" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300 }}>
+                <p className="text-sm text-gray-600 leading-relaxed" style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 300 }}>
                   {service.description}
                 </p>
               </motion.div>
@@ -289,7 +289,7 @@ export default function Landing() {
               Get in Touch
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-[#F4D03F] to-[#D4AF37] mx-auto mb-6"></div>
-            <p className="text-lg text-gray-600" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300 }}>
+            <p className="text-lg text-gray-600" style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 300 }}>
               Let's discuss how we can help your business thrive
             </p>
           </motion.div>
@@ -405,8 +405,8 @@ export default function Landing() {
       <footer className="bg-white py-8 border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
           <div className="text-center text-xs text-gray-600 tracking-wide space-y-2">
-            <p style={{ fontFamily: "'Poppins', sans-serif" }}>&copy; {new Date().getFullYear()} DERRYSEL DMCC. ALL RIGHTS RESERVED.</p>
-            <p style={{ fontFamily: "'Poppins', sans-serif" }}>
+            <p style={{ fontFamily: "'Montserrat', sans-serif" }}>&copy; {new Date().getFullYear()} DERRYSEL DMCC. ALL RIGHTS RESERVED.</p>
+            <p style={{ fontFamily: "'Montserrat', sans-serif" }}>
               The Company is registered and licensed as a FREEZONE Company under the Rules & Regulations of DMCCA.
             </p>
           </div>
