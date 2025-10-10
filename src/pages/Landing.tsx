@@ -147,26 +147,29 @@ export default function Landing() {
       {/* Hero Section */}
       <section ref={heroRef} id="home" className="relative min-h-screen flex items-center pt-24 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-8 lg:px-16 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
             {/* Left Content */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="space-y-10 relative z-10"
+              className="space-y-12 relative z-10"
             >
-              <h1
-                className="text-5xl lg:text-7xl font-serif text-[#1A1A1A] leading-tight mb-8"
-                style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700 }}
-              >
-                DERRYSEL DMCC
-              </h1>
-              <p
-                className="text-xl lg:text-2xl text-gray-600 leading-relaxed mb-10"
-                style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300 }}
-              >
-                Cultivating Excellence Through Strategic Vision
-              </p>
+              <div className="space-y-8">
+                <h1
+                  className="text-5xl lg:text-7xl font-serif text-[#1A1A1A] leading-tight"
+                  style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700 }}
+                >
+                  DERRYSEL DMCC
+                </h1>
+                <div className="w-24 h-1 bg-gradient-to-r from-[#F4D03F] to-[#D4AF37]"></div>
+                <p
+                  className="text-xl lg:text-2xl text-gray-600 leading-relaxed"
+                  style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300 }}
+                >
+                  Cultivating Excellence Through Strategic Vision
+                </p>
+              </div>
               
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
