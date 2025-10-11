@@ -27,13 +27,6 @@ import { useState, useEffect } from "react";
 import { toast } from "sonner";
 
 export default function Landing() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: ""
-  });
-
   // Section refs for smooth scrolling
   const heroRef = useRef(null);
   const servicesRef = useRef(null);
@@ -50,12 +43,6 @@ export default function Landing() {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast.success("Message sent successfully! We'll get back to you soon.");
-    setFormData({ name: "", email: "", message: "" });
   };
 
   return (
@@ -308,16 +295,21 @@ export default function Landing() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.7, ease: "easeOut" }}
             >
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form action="https://formsubmit.co/info@derrysel.com" method="POST" className="space-y-6">
+                {/* FormSubmit Configuration */}
+                <input type="hidden" name="_subject" value="New inquiry from Derrysel DMCC website" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_template" value="table" />
+                <input type="text" name="_honey" style={{ display: 'none' }} />
+                
                 <div>
                   <label htmlFor="name" className="block text-xs font-medium text-gray-700 mb-2 tracking-wide">
                     NAME
                   </label>
                   <Input
                     id="name"
+                    name="name"
                     type="text"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="Your name"
                     required
                     className="w-full"
@@ -329,9 +321,8 @@ export default function Landing() {
                   </label>
                   <Input
                     id="email"
+                    name="email"
                     type="email"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="your.email@example.com"
                     required
                     className="w-full"
@@ -343,8 +334,7 @@ export default function Landing() {
                   </label>
                   <Textarea
                     id="message"
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    name="message"
                     placeholder="Tell us about your project or inquiry..."
                     rows={5}
                     required
