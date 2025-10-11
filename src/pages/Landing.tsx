@@ -389,8 +389,7 @@ export default function Landing() {
                   <div>
                     <p className="text-xs font-medium text-[#1A1A1A] tracking-wide mb-1">PHONE</p>
                     <p className="text-sm text-gray-600 leading-relaxed">
-                      +971 52 118 9998<br />
-                      +971 4 432 7810
+                      +971 4432 7810
                     </p>
                   </div>
                 </div>
