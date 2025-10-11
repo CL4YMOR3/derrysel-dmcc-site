@@ -313,7 +313,10 @@ export default function Landing() {
                     type="text"
                     placeholder="Your name"
                     required
+                    minLength={2}
+                    maxLength={100}
                     className="w-full"
+                    title="Please enter your full name (2-100 characters)"
                   />
                 </div>
                 <div>
@@ -326,7 +329,9 @@ export default function Landing() {
                     type="email"
                     placeholder="your.email@example.com"
                     required
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                     className="w-full"
+                    title="Please enter a valid email address"
                   />
                 </div>
                 <div>
@@ -339,7 +344,10 @@ export default function Landing() {
                     placeholder="Tell us about your project or inquiry..."
                     rows={5}
                     required
+                    minLength={10}
+                    maxLength={1000}
                     className="w-full"
+                    title="Please enter your message (10-1000 characters)"
                   />
                 </div>
                 <motion.div
