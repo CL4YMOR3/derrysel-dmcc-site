@@ -356,7 +356,7 @@ export default function Landing() {
                 >
                   <Button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-[#F4D03F] to-[#D4AF37] hover:from-[#E5C130] hover:to-[#C5A028] text-white py-6 text-sm tracking-widest cursor-pointer transition-all duration-300 shadow-md hover:shadow-lg"
+                    className="w-full bg-gradient-to-r from-[#F4D03F] to-[#D4AF37] hover:from-[#E5C130] hover:to-[#C5A028] text-white py-6 text-sm tracking-widest cursor-pointer transition-all duration-200 shadow-lg hover:shadow-xl"
                     style={{ fontFamily: "'Playfair Display', serif", fontWeight: 600 }}
                   >
                     SEND MESSAGE
