@@ -1,30 +1,16 @@
 import { motion } from "framer-motion";
 import { useRef } from "react";
 import { 
-  Briefcase, 
-  TrendingUp, 
-  Users, 
-  FileText, 
-  Sprout,
   Mail,
   Phone,
   MapPin,
-  Linkedin,
-  ArrowRight,
-  BarChart3,
-  Megaphone,
-  Building2,
-  ClipboardCheck,
-  Leaf,
   Menu
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent } from "@/components/ui/card";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useState, useEffect } from "react";
-import { toast } from "sonner";
 
 export default function Landing() {
   // Section refs for smooth scrolling
