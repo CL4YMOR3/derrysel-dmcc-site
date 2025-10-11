@@ -31,6 +31,7 @@ export default function Landing() {
   const heroRef = useRef(null);
   const servicesRef = useRef(null);
   const contactRef = useRef(null);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
