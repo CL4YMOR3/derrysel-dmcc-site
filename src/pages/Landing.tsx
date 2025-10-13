@@ -52,7 +52,7 @@ export default function Landing() {
               className="flex items-center gap-3"
             >
               <img
-                src="https://harmless-tapir-303.convex.cloud/api/storage/01e4b1b7-a536-41e4-9744-6b6e343f54bc"
+                src="main_logo.png"
                 alt="Derrysel DMCC Logo"
                 className="h-8 sm:h-10 md:h-12 w-auto"
               />
@@ -176,7 +176,7 @@ export default function Landing() {
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-[#F4D03F]/10 to-[#D4AF37]/10 rounded-2xl blur-2xl"></div>
                 <img
-                  src="https://harmless-tapir-303.convex.cloud/api/storage/3758d696-d7aa-4293-b003-d9ad9dc08b13"
+                  src="/main_logo.png"
                   alt="Derrysel DMCC Logo"
                   className="relative w-full max-w-md h-auto drop-shadow-2xl"
                 />
