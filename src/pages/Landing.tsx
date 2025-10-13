@@ -49,17 +49,17 @@ export default function Landing() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex items-center gap-3"
+              className="flex items-center gap-4"
             >
               <img
                 src="main_logo.png"
                 alt="Derrysel DMCC Logo"
-                className="h-8 sm:h-10 md:h-12 w-auto"
+                className="h-10 sm:h-12 md:h-14 w-auto"
               />
-              <div className="text-base sm:text-lg md:text-xl font-serif tracking-wide" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
-                <span className="text-[#1A1A1A]">DERRYSEL</span>
+              <div className="text-lg sm:text-xl md:text-2xl font-serif tracking-wider" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+                <span className="text-[#1A1A1A] font-bold">DERRYSEL</span>
                 <br />
-                <span className="text-[#D4AF37] text-xs sm:text-sm">DMCC</span>
+                <span className="text-[#D4AF37] text-sm sm:text-base font-semibold">DMCC</span>
               </div>
             </motion.div>
             
@@ -129,16 +129,16 @@ export default function Landing() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="space-y-12 relative z-10"
             >
-              <div className="space-y-8">
+              <div className="space-y-10">
                 <h1
-                  className="text-5xl lg:text-7xl font-serif text-[#1A1A1A] leading-tight"
+                  className="text-6xl lg:text-8xl font-serif text-[#1A1A1A] leading-tight"
                   style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700 }}
                 >
                   DERRYSEL DMCC
                 </h1>
-                <div className="w-24 h-1 bg-gradient-to-r from-[#F4D03F] to-[#D4AF37]"></div>
+                <div className="w-32 h-1.5 bg-gradient-to-r from-[#F4D03F] via-[#E5C130] to-[#D4AF37] shadow-md"></div>
                 <p
-                  className="text-xl lg:text-2xl text-gray-600 leading-relaxed tracking-wide"
+                  className="text-2xl lg:text-3xl text-gray-700 leading-relaxed tracking-wide"
                   style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 300 }}
                 >
                   Cultivating Excellence Through Strategic Vision
@@ -154,7 +154,7 @@ export default function Landing() {
               >
                 <Button
                   onClick={() => scrollToSection("services")}
-                  className="bg-gradient-to-r from-[#F4D03F] to-[#D4AF37] hover:from-[#E5C130] hover:to-[#C5A028] text-white px-12 py-7 text-sm tracking-widest cursor-pointer rounded-full uppercase font-medium transition-all duration-200 shadow-lg hover:shadow-xl"
+                  className="bg-gradient-to-r from-[#F4D03F] to-[#D4AF37] hover:from-[#E5C130] hover:to-[#C5A028] text-white px-14 py-8 text-base tracking-widest cursor-pointer rounded-full uppercase font-semibold transition-all duration-200 shadow-xl hover:shadow-2xl border border-[#D4AF37]/20"
                   style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600 }}
                 >
                   Explore
@@ -174,11 +174,12 @@ export default function Landing() {
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 className="relative"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-[#F4D03F]/10 to-[#D4AF37]/10 rounded-2xl blur-2xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#F4D03F]/20 to-[#D4AF37]/20 rounded-3xl blur-3xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#D4AF37]/10 to-transparent rounded-3xl"></div>
                 <img
                   src="/main_logo.png"
                   alt="Derrysel DMCC Logo"
-                  className="relative w-full max-w-md h-auto drop-shadow-2xl"
+                  className="relative w-full max-w-md h-auto drop-shadow-2xl filter brightness-105"
                 />
               </motion.div>
             </motion.div>
@@ -197,12 +198,12 @@ export default function Landing() {
             className="text-center mb-20"
           >
             <h2
-              className="text-5xl lg:text-6xl font-serif text-[#1A1A1A] mb-6"
+              className="text-5xl lg:text-7xl font-serif text-[#1A1A1A] mb-8"
               style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700 }}
             >
               Our Expertise
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-[#F4D03F] to-[#D4AF37] mx-auto mb-6"></div>
+            <div className="w-32 h-1.5 bg-gradient-to-r from-[#F4D03F] via-[#E5C130] to-[#D4AF37] mx-auto mb-8 shadow-md"></div>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed" style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 300 }}>
               Comprehensive consultancy solutions designed to help your business grow, innovate, and thrive.
             </p>
@@ -264,12 +265,12 @@ export default function Landing() {
             className="text-center mb-20"
           >
             <h2
-              className="text-5xl lg:text-6xl font-serif text-[#1A1A1A] mb-6"
+              className="text-5xl lg:text-7xl font-serif text-[#1A1A1A] mb-8"
               style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700 }}
             >
               Get in Touch
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-[#F4D03F] to-[#D4AF37] mx-auto mb-6"></div>
+            <div className="w-32 h-1.5 bg-gradient-to-r from-[#F4D03F] via-[#E5C130] to-[#D4AF37] mx-auto mb-8 shadow-md"></div>
             <p className="text-lg text-gray-600 leading-relaxed" style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 300 }}>
               Let's discuss how we can help your business thrive
             </p>
@@ -342,7 +343,7 @@ export default function Landing() {
                 >
                   <Button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-[#F4D03F] to-[#D4AF37] hover:from-[#E5C130] hover:to-[#C5A028] text-white py-6 text-sm tracking-widest cursor-pointer transition-all duration-200 shadow-lg hover:shadow-xl"
+                    className="w-full bg-gradient-to-r from-[#F4D03F] to-[#D4AF37] hover:from-[#E5C130] hover:to-[#C5A028] text-white py-7 text-base tracking-widest cursor-pointer transition-all duration-200 shadow-xl hover:shadow-2xl border border-[#D4AF37]/20 font-semibold"
                     style={{ fontFamily: "'Playfair Display', serif", fontWeight: 600 }}
                   >
                     SEND MESSAGE
