@@ -55,10 +55,10 @@ export default function Landing() {
                 alt="Derrysel DMCC Logo"
                 className="h-10 sm:h-12 md:h-14 w-auto"
               />
-              <div className="text-lg sm:text-xl md:text-2xl font-serif tracking-wider" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+              <div className="text-xl md:text-2xl tracking-wider" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                 <span className="text-[#1A1A1A] font-bold">DERRYSEL</span>
                 <br />
-                <span className="text-[#D4AF37] text-sm sm:text-base font-semibold">DMCC</span>
+                <span className="text-[#D4AF37] text-base font-semibold">DMCC</span>
               </div>
             </motion.div>
             
@@ -75,7 +75,7 @@ export default function Landing() {
                   transition={{ delay: 0.3 + index * 0.1, duration: 0.5 }}
                   whileHover={{ scale: 1.05 }}
                   onClick={() => scrollToSection(item.id)}
-                  className="text-xs font-medium tracking-widest text-[#1A1A1A] hover:text-[#D4AF37] transition-colors"
+                  className="text-sm font-medium tracking-widest text-[#1A1A1A] hover:text-[#D4AF37] transition-colors"
                   style={{ fontFamily: "'Montserrat', sans-serif" }}
                 >
                   {item.label}
@@ -90,7 +90,7 @@ export default function Landing() {
                   <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[250px] sm:w-[300px]">
+              <SheetContent side="right" className="w-[250px] sm:w-[300px] bg-white p-6">
                 <nav className="flex flex-col gap-6 mt-8">
                   {[
                     { label: "HOME", id: "home" },
@@ -99,12 +99,8 @@ export default function Landing() {
                   ].map((item) => (
                     <button
                       key={item.label}
-                      onClick={() => {
-                        scrollToSection(item.id);
-                        // Close the sheet after navigation
-                        document.querySelector('[data-slot="sheet-close"]')?.dispatchEvent(new Event('click', { bubbles: true }));
-                      }}
-                      className="text-left text-sm font-medium tracking-widest text-[#1A1A1A] hover:text-[#D4AF37] transition-colors"
+                      onClick={() => scrollToSection(item.id)}
+                      className="text-left text-base font-medium tracking-widest text-[#1A1A1A] hover:text-[#D4AF37] transition-colors py-2"
                       style={{ fontFamily: "'Montserrat', sans-serif" }}
                     >
                       {item.label}
@@ -130,15 +126,15 @@ export default function Landing() {
             >
               <div className="space-y-10">
                 <h1
-                  className="text-6xl lg:text-8xl font-serif text-[#1A1A1A] leading-tight"
-                  style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700 }}
+                  className="text-5xl lg:text-7xl text-[#1A1A1A] leading-tight"
+                  style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontSize: '4.236rem' }}
                 >
                   DERRYSEL DMCC
                 </h1>
                 <div className="w-32 h-1.5 bg-gradient-to-r from-[#F4D03F] via-[#E5C130] to-[#D4AF37] shadow-md"></div>
                 <p
-                  className="text-2xl lg:text-3xl text-gray-700 leading-relaxed tracking-wide"
-                  style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 300 }}
+                  className="text-xl lg:text-2xl text-gray-700 leading-relaxed tracking-wide"
+                  style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 300, fontSize: '1.618rem' }}
                 >
                   Cultivating Excellence Through Strategic Vision
                 </p>
@@ -153,8 +149,8 @@ export default function Landing() {
               >
                 <Button
                   onClick={() => scrollToSection("services")}
-                  className="bg-gradient-to-r from-[#F4D03F] to-[#D4AF37] hover:from-[#E5C130] hover:to-[#C5A028] text-white px-14 py-8 text-base tracking-widest cursor-pointer rounded-full uppercase font-semibold transition-all duration-200 shadow-xl hover:shadow-2xl border border-[#D4AF37]/20"
-                  style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600 }}
+                  className="bg-gradient-to-r from-[#F4D03F] to-[#D4AF37] hover:from-[#E5C130] hover:to-[#C5A028] text-white px-12 py-7 text-sm tracking-widest cursor-pointer rounded-full uppercase font-semibold transition-all duration-200 shadow-xl hover:shadow-2xl border border-[#D4AF37]/20"
+                  style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 600 }}
                 >
                   Explore
                 </Button>
@@ -173,8 +169,8 @@ export default function Landing() {
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 className="relative"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-[#F4D03F]/20 to-[#D4AF37]/20 rounded-3xl blur-3xl"></div>
-                <div className="absolute inset-0 bg-gradient-to-tr from-[#D4AF37]/10 to-transparent rounded-3xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#F4D03F]/10 to-[#D4AF37]/10 rounded-3xl blur-3xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#D4AF37]/5 to-transparent rounded-3xl"></div>
                 <img
                   src="/main_logo.png"
                   alt="Derrysel DMCC Logo"
@@ -197,13 +193,13 @@ export default function Landing() {
             className="text-center mb-20"
           >
             <h2
-              className="text-5xl lg:text-7xl font-serif text-[#1A1A1A] mb-8"
-              style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700 }}
+              className="text-4xl lg:text-6xl text-[#1A1A1A] mb-8"
+              style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontSize: '2.618rem' }}
             >
               Our Expertise
             </h2>
             <div className="w-32 h-1.5 bg-gradient-to-r from-[#F4D03F] via-[#E5C130] to-[#D4AF37] mx-auto mb-8 shadow-md"></div>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed" style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 300 }}>
+            <p className="text-base text-gray-600 max-w-3xl mx-auto leading-relaxed" style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 400 }}>
               Comprehensive consultancy solutions designed to help your business grow, innovate, and thrive.
             </p>
           </motion.div>
@@ -241,10 +237,10 @@ export default function Landing() {
                 className="group relative"
               >
                 <div className="absolute -left-4 top-0 w-1 h-0 bg-gradient-to-b from-[#F4D03F] to-[#D4AF37] group-hover:h-full transition-all duration-500 ease-out"></div>
-                <h3 className="text-xl font-serif text-[#1A1A1A] mb-4 uppercase tracking-wider group-hover:text-[#D4AF37] transition-colors duration-300" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600 }}>
+                <h3 className="text-lg text-[#1A1A1A] mb-4 uppercase tracking-wider group-hover:text-[#D4AF37] transition-colors duration-300" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600 }}>
                   {service.title}
                 </h3>
-                <p className="text-sm text-gray-600 leading-relaxed" style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 300 }}>
+                <p className="text-base text-gray-600 leading-relaxed" style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 400 }}>
                   {service.description}
                 </p>
               </motion.div>
@@ -264,13 +260,13 @@ export default function Landing() {
             className="text-center mb-20"
           >
             <h2
-              className="text-5xl lg:text-7xl font-serif text-[#1A1A1A] mb-8"
-              style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700 }}
+              className="text-4xl lg:text-6xl text-[#1A1A1A] mb-8"
+              style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontSize: '2.618rem' }}
             >
               Get in Touch
             </h2>
             <div className="w-32 h-1.5 bg-gradient-to-r from-[#F4D03F] via-[#E5C130] to-[#D4AF37] mx-auto mb-8 shadow-md"></div>
-            <p className="text-lg text-gray-600 leading-relaxed" style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 300 }}>
+            <p className="text-base text-gray-600 leading-relaxed" style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 400 }}>
               Let's discuss how we can help your business thrive
             </p>
           </motion.div>
@@ -342,8 +338,8 @@ export default function Landing() {
                 >
                   <Button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-[#F4D03F] to-[#D4AF37] hover:from-[#E5C130] hover:to-[#C5A028] text-white py-7 text-base tracking-widest cursor-pointer transition-all duration-200 shadow-xl hover:shadow-2xl border border-[#D4AF37]/20 font-semibold"
-                    style={{ fontFamily: "'Playfair Display', serif", fontWeight: 600 }}
+                    className="w-full bg-gradient-to-r from-[#F4D03F] to-[#D4AF37] hover:from-[#E5C130] hover:to-[#C5A028] text-white py-6 text-sm tracking-widest cursor-pointer transition-all duration-200 shadow-xl hover:shadow-2xl border border-[#D4AF37]/20 font-semibold"
+                    style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 600 }}
                   >
                     SEND MESSAGE
                   </Button>
@@ -363,7 +359,7 @@ export default function Landing() {
                   <MapPin className="w-5 h-5 text-[#D4AF37] flex-shrink-0 mt-1" />
                   <div>
                     <p className="text-xs font-medium text-[#1A1A1A] tracking-wide mb-1">OFFICE ADDRESS</p>
-                    <p className="text-sm text-gray-600 leading-relaxed">
+                    <p className="text-base text-gray-600 leading-relaxed">
                       Unit No: 262, DMCC Business Centre<br />
                       Level No. 5, Jewellery & Gemplex 2<br />
                       Dubai, United Arab Emirates
@@ -374,7 +370,7 @@ export default function Landing() {
                   <Mail className="w-5 h-5 text-[#D4AF37] flex-shrink-0 mt-1" />
                   <div>
                     <p className="text-xs font-medium text-[#1A1A1A] tracking-wide mb-1">EMAIL</p>
-                    <p className="text-sm text-gray-600 leading-relaxed">info@derrysel.com</p>
+                    <p className="text-base text-gray-600 leading-relaxed">info@derrysel.com</p>
                   </div>
                 </div>
               </div>
@@ -386,7 +382,7 @@ export default function Landing() {
       {/* Footer */}
       <footer className="bg-white py-8 border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
-          <div className="text-center text-xs text-gray-600 tracking-wide space-y-2">
+          <div className="text-center text-sm text-gray-600 tracking-wide space-y-2">
             <p style={{ fontFamily: "'Montserrat', sans-serif" }}>&copy; {new Date().getFullYear()} DERRYSEL DMCC. ALL RIGHTS RESERVED.</p>
             <p style={{ fontFamily: "'Montserrat', sans-serif" }}>
               The Company is registered and licensed as a FREEZONE Company under the Rules & Regulations of DMCCA.
