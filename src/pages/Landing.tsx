@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { useRef } from "react";
 import { 
   Mail,
-  Phone,
   MapPin,
   Menu
 } from "lucide-react";
@@ -43,7 +42,7 @@ export default function Landing() {
           isScrolled ? "bg-white shadow-sm" : "bg-white"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-8 lg:px-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16">
           <div className="flex justify-between items-center h-24">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -219,15 +218,15 @@ export default function Landing() {
                 description: "Strategic campaigns for brand positioning and customer engagement."
               },
               {
-                title: "Management Consultancies",
+                title: "Management Consultancy",
                 description: "Operational optimization and strategic business planning."
               },
               {
-                title: "Feasibility Studies Consultancies",
+                title: "Feasibility Studies Consultancy",
                 description: "Financial and market viability assessments for new ventures."
               },
               {
-                title: "Agricultural Research and Consultancies",
+                title: "Agricultural Research and Consultancy",
                 description: "Innovative agri-solutions and sustainability-focused research."
               }
             ].map((service, index) => (
@@ -367,15 +366,6 @@ export default function Landing() {
                       Unit No: 262, DMCC Business Centre<br />
                       Level No. 5, Jewellery & Gemplex 2<br />
                       Dubai, United Arab Emirates
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <Phone className="w-5 h-5 text-[#D4AF37] flex-shrink-0 mt-1" />
-                  <div>
-                    <p className="text-xs font-medium text-[#1A1A1A] tracking-wide mb-1">PHONE</p>
-                    <p className="text-sm text-gray-600 leading-relaxed">
-                      +971 4432 7810
                     </p>
                   </div>
                 </div>
